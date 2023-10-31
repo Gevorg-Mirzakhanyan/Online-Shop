@@ -1,7 +1,9 @@
 import Categories from "./components/Categories/Categories"
 import HomeMenu from "./components/HomeMenu/HomeMenu"
+import Offer from "./components/HomeMenu/Offer"
 import Products from "./components/Products/Products"
 import ShopInfo from "./components/ShopInfo/ShopInfo"
+import "./Home.scss"
 
 
 const Home = () => {
@@ -11,6 +13,8 @@ const Home = () => {
             <ShopInfo />
             <Categories />
             <Products />
+            <div className="offer-container"><Offer /></div>
+            
 
         </div>
     )

@@ -14,7 +14,9 @@ const Products = () => {
                             <h6 className="prod-name">{item.name}</h6>
                             <span className="prod-name-info">{item.info}</span>
                             <h5 className="prod-price">{item.price} <del>{item.price}</del></h5>
-                            <span className="prod-icon">{item.icon} {item.icon} {item.icon} {item.icon} {item.icon}</span>(99)
+                            <span className="prod-icon">{[...Array(5)].map(star => {
+                                return item.icon
+                            })}</span>(99)
                         </div>
                     </a>
                 ))}

@@ -2,29 +2,32 @@
     padding: 40px 0 40px 80px;
     display: flex;
     gap: 50px;
-    .offer {
-        width: 33%;
-        display: flex;
-        flex-direction: column;
-        gap: 50px;
-        .offer-info {
+    .homeOffer {
+        .offer {
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            color: #FFFFFF;
-            gap: 20px;
-            margin-top: 80px;
-            font-size: 24px;
-            font-weight: 900;
-            .offerBtn {
-                padding: 15px 20px;
-                font-size: 20px;
-                background-color: #FFD333;
-                color: #3D464D;
-                border: none;
-                cursor: pointer;
+            gap: 50px;
+            width: 580px;
+            max-width: 580px;
+            .offer-info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                color: #FFFFFF;
+                gap: 20px;
+                margin-top: 80px;
+                font-size: 24px;
+                font-weight: 900;
+                .offerBtn {
+                    padding: 15px 20px;
+                    font-size: 20px;
+                    background-color: #FFD333;
+                    color: #3D464D;
+                    border: none;
+                    cursor: pointer;
+                }
             }
         }
     }
