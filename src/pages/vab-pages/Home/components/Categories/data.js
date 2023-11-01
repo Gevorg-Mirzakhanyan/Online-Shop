@@ -1,7 +1,7 @@
-import catImg1 from "../../../../assets/img/cat-1.jpg";
-import catImg2 from "../../../../assets/img/cat-2.jpg";
-import catImg3 from "../../../../assets/img/cat-3.jpg";
-import catImg4 from "../../../../assets/img/cat-4.jpg";
+import catImg1 from "../../../../../assets/img/cat-1.jpg";
+import catImg2 from "../../../../../assets/img/cat-2.jpg";
+import catImg3 from "../../../../../assets/img/cat-3.jpg";
+import catImg4 from "../../../../../assets/img/cat-4.jpg";
 
 const data = [
     {

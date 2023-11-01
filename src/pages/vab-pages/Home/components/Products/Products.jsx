@@ -1,10 +1,10 @@
 import dataProducts from "./dataProducts"
 import "./Products.scss"
-const Products = () => {
+const Products = (props) => {
     return (
         <div className="prod-section">
               <h2 className="prod-title">
-                <span className="title">RECENT PRODUCTS</span>
+                <span className="title">{props.title}</span>
             </h2>
             <div className="product">
                 {dataProducts.map((item) => (
@@ -16,7 +16,7 @@ const Products = () => {
                             <h5 className="prod-price">{item.price} <del>{item.price}</del></h5>
                             <span className="prod-icon">{[...Array(5)].map(star => {
                                 return item.icon
-                            })}</span>(99)
+                            })}</span>(99),
                         </div>
                     </a>
                 ))}

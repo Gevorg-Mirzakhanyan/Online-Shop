@@ -1,7 +1,6 @@
 import "./Header.scss";
 import Navbar from "./Navbar";
 import {Link} from "react-router-dom"
-import {FaShoppingCart} from "react-icons/fa"
 const Header = () => {
     return(
         <div className="header">
@@ -12,7 +11,7 @@ const Header = () => {
             </div>
           
             <Link className="icon-container">
-                <FaShoppingCart className="icon" />
+            <i className="icon-basket basket"/> 
                 <span className="box">0</span>
             </Link>
            

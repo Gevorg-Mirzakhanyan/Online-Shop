@@ -1,5 +1,5 @@
 .categ-section {
-    padding: 60px 80px;
+    padding: 60px 40px 60px 60px;
     .categ-title {
         position: relative;
         &::after {
@@ -28,7 +28,9 @@
         gap: 40px;
         .cat-product-info {
             display: flex;
+            
             text-decoration: none;
+        
             .cat-description {
                 display: flex;
                 flex-direction: column;
@@ -36,7 +38,7 @@
                 justify-content: center;
                 align-items: center;
                 gap: 20px;
-                padding: 0 70px 0 20px;
+                padding: 0 10px 0 20px;
                 .cat-name {
                     font-size: 24px;
                     margin-bottom: 0.5rem;

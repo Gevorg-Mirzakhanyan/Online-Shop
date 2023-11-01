@@ -1,0 +1,10 @@
+.home-menu {
+    padding: 40px 40px 40px 60px;
+    display: flex;
+    gap: 30px;
+    .backgoundCarusel {
+        background-size: cover;
+        width: 65%;
+        background-position: center;
+    }
+}

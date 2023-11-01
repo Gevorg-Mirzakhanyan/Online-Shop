@@ -1,7 +1,9 @@
 
 import './App.css';
-import Header from './header/Header';
-import Home from './pages/Home/Home';
+import './assets/style/index.scss'
+import Header from './components/header/Header';
+import Home from './pages/vab-pages/Home/Home';
+
 
 function App() {
   return (
