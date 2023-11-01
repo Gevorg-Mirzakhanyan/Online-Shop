@@ -1,0 +1,57 @@
+.footer {
+    background-color: #3D464D;
+    padding: 80px 35px 0 35px;
+    margin-top: 60px;
+    .footer-description {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 30px;
+        .footer-first-section, .footer-second-section{
+            max-width: 350px;
+            .footer-header {
+                color: #f5f5f5;
+                font-size: 1.25rem;
+                font-weight: 500;
+                line-height: 1.2;
+                margin-bottom: 1.5rem
+            }
+            .footer-text {
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #f5f5f5;
+                margin-bottom: 1.5rem
+            }
+            .footer-info {
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #f5f5f5;
+                margin-bottom: 0.5rem;
+                .icon-footer {
+                    color: #FFD333;
+                    margin-right: 10px;
+                    font-weight: 900;
+                }
+            }
+            .footer-input {
+                padding: 10px;  
+            }
+            .footer-btn {
+                background-color: #FFD333;
+                padding: 10px;
+                color: #3D464D;
+                margin-bottom: 1.5rem;
+            }
+            
+        }
+    }
+    .payment {
+        border-top: 1px solid rgba(256, 256, 256, .1);
+        text-align: right;
+        padding: 15px 0;  
+        
+    }
+  
+}

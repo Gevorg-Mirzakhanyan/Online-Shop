@@ -20,7 +20,7 @@ const image = [
 ]
 
     return(
-        <div>
+        <div className="vendor">
             {image.map((item) => {
                 return <img src={item} alt="/" />
             })}

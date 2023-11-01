@@ -1,6 +1,7 @@
 
 import './App.css';
 import './assets/style/index.scss'
+import Footer from './components/footer/Footer';
 import Header from './components/header/Header';
 import Home from './pages/vab-pages/Home/Home';
 
@@ -10,6 +11,7 @@ function App() {
     <div className="App">
       <Header />
       <Home />
+      <Footer />
     </div>
   );
 }
