@@ -26,6 +26,22 @@ const Footer = () => {
                     />
                     <button className="footer-btn">Sign Up</button>
                     <h6 className="footer-header">FOLLOW US</h6>
+                    <div>
+                        <a href="/">
+                            <i className="icon-facebook  icon-social" />
+                        </a>
+                        <a href="/">
+                            <i className="icon-instagram icon-social" />
+                        </a>
+                        <a href="/">
+                            <i className="icon-linkedin icon-social" />
+                        </a>
+                        <a href="/">
+                            <i className="icon-twitter icon-social" />
+                        </a>
+                           
+                       
+                    </div>
                 </div>
             </div>
             <div className="payment">

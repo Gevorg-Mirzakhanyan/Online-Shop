@@ -1,5 +1,8 @@
 .vendor {
-    display: flex;
-    gap: 20px;
 
+  max-width: 1320px;
+  padding-left: 60px;
+  .vendor-img {
+    padding-right: 30px;
+  }
 }

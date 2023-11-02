@@ -1,6 +1,6 @@
 .header {
     background-color: #3D464D;
-    padding: 10px 60px;
+    padding: 20px 60px;
     display: flex;
     justify-content: space-between;
     .header-nav {
@@ -20,16 +20,7 @@
             color: #3D464D;
             padding: 0 10px;
         }
-        .navbar {
-            display: flex;
-            gap: 50px;
-            padding: 10px 40px;
-            .link-container a {
-                color: #FFFFFF;
-                font-size: 24px;
-                text-decoration: none;
-            }
-        }
+      
     }
    
     .icon-container {
