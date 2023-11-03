@@ -1,7 +1,25 @@
+import { Link } from "react-router-dom"
+import "./Contact.scss"
+import ContactRegister from "./components/ContactRegister"
+import Address from "./components/Address"
 const Contacts = () => {
     return(
-        <div>
-
+        <div className="contact">
+            <div className="contact-page">
+                <span><Link>Home</Link>/Contact</span>
+            </div>
+            <h2 className="contact-title">
+                <span className="title">CONTACT US</span>
+            </h2>
+            <div className="contact-info">
+                <ContactRegister />
+                <div>
+                    <div className="map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d195168.08508053457!2d44.4885671!3d40.1533904!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sam!4v1694884739434!5m2!1sen!2sam" width="500" height="250"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <Address />
+                </div>
+            </div>
         </div>
     )
 }
