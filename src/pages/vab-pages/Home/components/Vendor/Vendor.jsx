@@ -8,44 +8,34 @@ import vendor6 from "../../../../../assets/img/vendor-6.jpg"
 import vendor7 from "../../../../../assets/img/vendor-7.jpg"
 import vendor8 from "../../../../../assets/img/vendor-8.jpg"
 import Slider from "react-slick";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
 
 const Vendor = () => {
-const image = [
-    vendor1,
-    vendor2,
-    vendor3,
-    vendor4,
-    vendor5,
-    vendor6,
-    vendor7,
-    vendor8,
-]
+    const image = [
+        vendor1,
+        vendor2,
+        vendor3,
+        vendor4,
+        vendor5,
+        vendor6,
+        vendor7,
+        vendor8,
+    ]
 
+    const settings = {
+        autoplay: true,
+        autoplaySpeed: 3000,
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false
+    };
 
-const settings = {
-    autoplay: true,
-    autoplaySpeed: 2000,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    infinite: true,
-  };
-
-    return(
-       
-           
-           <Slider className="vendor" {...settings}>
-    
-                {image.map((item) => {
-                    return  <img className="vendor-img" src={item} alt="/" />
-                })}
-              
-                </Slider>
-             
-        
-
+    return (
+        <Slider className="vendor" {...settings}>
+            {image.map((item) => {
+                return <div><img src={item} alt="/" /></div>
+            })}
+        </Slider>
     )
 }
 

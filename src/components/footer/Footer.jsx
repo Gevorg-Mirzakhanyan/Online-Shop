@@ -11,7 +11,7 @@ const Footer = () => {
                         Rebum tempor no vero est magna amet no
                     </p>
                     <p className="footer-info"><i className="icon-location icon-footer" />123 Street, New York, USA</p>
-                    <p className="footer-info"><i className="icon-mail icon-footer" />info@example.com</p>
+                    <p className="footer-info"><i className="icon-email icon-footer" />info@example.com</p>
                     <p className="footer-info"><i className="icon-call icon-footer" />+012 345 67890</p>
                 </div>
                 <div className="footer-second-section">
@@ -28,7 +28,7 @@ const Footer = () => {
                     <h6 className="footer-header">FOLLOW US</h6>
                     <div>
                         <a href="/">
-                            <i className="icon-facebook  icon-social" />
+                            <i className="icon-facebook   icon-social" />
                         </a>
                         <a href="/">
                             <i className="icon-instagram icon-social" />

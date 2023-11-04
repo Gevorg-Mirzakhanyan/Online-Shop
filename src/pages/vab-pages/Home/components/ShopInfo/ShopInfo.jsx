@@ -12,7 +12,7 @@ const ShopInfo = () => {
                 <h5 className="info-text">Free Shipping</h5>
             </div>
             <div className="info">
-                <i className="icon-alt info-icon" />
+                <i className="icon-sync info-icon" />
                 <h5 className="info-text">14-Day Return</h5>
             </div>
             <div className="info">

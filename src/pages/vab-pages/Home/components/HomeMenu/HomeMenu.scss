@@ -2,10 +2,39 @@
     padding: 40px 40px 40px 60px;
     display: flex;
     gap: 30px;
+    .home-slider{
+        width: 65%;
+        .slick-dots { 
+            li { 
+              list-style: none; 
+              bottom: 45px; 
+              margin: 0 10px; 
+              button { 
+                width: 20px; 
+                height: 20px; 
+                border: 1px solid #FFFFFF; 
+                background: transparent; 
+                list-style: none; 
+         
+                &::before { 
+                  display: none; 
+                } 
+         
+                &:hover { 
+                  width: 35px; 
+                  background-color: #FFFFFF; 
+                  transition: 0.3s; 
+                } 
+              } 
+            } 
+          }
+      
+    }
     .backgroundCarusel {
         background-size: cover;
-        width: 65%;
+        width: 100%;
         background-position: center;
+        min-height: 430px;
         .home-menu-img {
             display: flex;
             flex-direction: column;
