@@ -1,10 +1,18 @@
-import { Link } from "react-router-dom";
+
 import "./Shop.scss"
+import Paragrafs from "../../../components/paragrafs/Paragrafs";
+import "../../../components/paragrafs/Paragrafs.scss"
+import Filter from "./components/filter/Filter.jsx";
+import ShopProduct from "./components/shopProduct/ShopProduct.jsx";
+
+
 const Shop = () => {
     return(
         <div className="shop">
-             <div className="shop-page">
-                <span><Link>Home</Link>/<Link>Shop</Link>/Contact</span>
+            <Paragrafs list={['Home/', 'Shop/', 'Shop List']} />
+            <div className="shop-page">
+                <Filter />
+                <ShopProduct />
             </div>
         </div>
     )

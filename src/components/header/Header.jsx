@@ -11,7 +11,7 @@ const Header = () => {
             </div>
           
             <Link className="icon-container">
-            <i className="icon-basket basket"/> 
+                <i className="icon-basket basket"/> 
                 <span className="box">0</span>
             </Link>
            

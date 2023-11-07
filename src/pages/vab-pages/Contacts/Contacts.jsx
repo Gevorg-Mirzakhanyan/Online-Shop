@@ -3,6 +3,7 @@ import "./Contact.scss"
 import ContactRegister from "./components/ContactRegister"
 import Address from "./components/Address"
 import Paragrafs from "../../../components/paragrafs/Paragrafs"
+import "../../../components/paragrafs/Paragrafs.scss"
 
 
 
@@ -12,7 +13,7 @@ const Contacts = () => {
     return(
         <div className="contact">
             <div className="contact-page">
-                <Paragrafs list={['home/', 'contact']} />
+                <Paragrafs list={['Home/', 'Contact']} />
             </div>
             <h2 className="contact-title">
                 <span className="title">CONTACT US</span>

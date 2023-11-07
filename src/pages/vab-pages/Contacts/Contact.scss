@@ -1,18 +1,6 @@
 .contact {
     padding: 60px;
-    .contact-page {
-        width: 100%;
-        background-color: #FFFFFF;
-        padding: 15px 15px;
-        color: #3D464D;
-        margin-bottom: 1.5rem;
-        a {
-            color: #3D464D;
-            &:hover {
-                border-bottom: 1px solid black;
-            }
-        }
-    }
+ 
     .contact-title {
         position: relative;
         &::after {

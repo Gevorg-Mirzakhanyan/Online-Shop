@@ -15,11 +15,9 @@
                 border: 1px solid #FFFFFF; 
                 background: transparent; 
                 list-style: none; 
-         
                 &::before { 
                   display: none; 
                 } 
-         
                 &:hover { 
                   width: 35px; 
                   background-color: #FFFFFF; 

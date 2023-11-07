@@ -1,0 +1,48 @@
+.details {
+    display: flex;
+    gap: 30px;
+    .shop-detail-slider {
+        width: 40%;
+    }
+    .shop-detail-info {
+        background-color: #FFFFFF;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        .icon {
+            color: #FFD333;
+            font-size: 20px;
+        }
+        }
+        .detail-title {
+            font-size: 1.75rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #3D464D;
+        }
+        .detail-description {
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #6C757D;
+        }
+        .detail-info-size {
+            display: flex;
+            gap: 10px;
+            .size-name {
+                color: #3D464D;
+                font-weight: bolder;
+                font-size: 1rem;
+                line-height: 1.5
+            }
+            .size {
+                padding: 5px;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #6C757D;
+            }
+        }
+    }
+

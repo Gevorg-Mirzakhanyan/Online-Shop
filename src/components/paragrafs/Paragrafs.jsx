@@ -2,12 +2,10 @@
 const Paragrafs = ({ list }) => {
 
     return (
-        <div className="shopPage">
-            <ul>
-                {list.map((item, index) => {
-                    return <li>{item}</li>
+        <div className="paragraf">
+            {list.map((item, index) => {
+                    return <span>{item}</span>
                 })}
-            </ul>
         </div>
     )
 }

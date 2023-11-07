@@ -1,0 +1,38 @@
+.shop-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .shop-btn-list {
+        display: flex;
+        margin-top: 50px;
+        .shop-btn-link.disabled {
+            color: #6c757d;
+            pointer-events: none;
+            cursor: auto;
+            background-color: #fff;
+            border-color: #dee2e6;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #dee2e6;
+        }
+        .shop-btn-link {
+            color: #fff;
+            padding: 0.5rem 0.75rem;
+            margin-left: -1px;
+            line-height: 1.25;
+            border: 1px solid #dee2e6;
+            color: #FFD333;
+            &:hover {
+                background-color: #dee2e6;
+            }
+        }
+        .active {
+            background-color: #FFD333;
+            border-color: #FFD333;
+            color: #FFFFFF;
+            &:hover {
+                background-color: #FFD333;
+            }
+        }
+        
+    }
+}
