@@ -56,11 +56,21 @@ const DetailInfo = () => {
                     <span className="size">Green</span>
                 </label>
             </div>
-            <div>
-                <button className="detail-click">-</button>
-                <input className="detail-input" type="number" value={1} />
-                <button className="detail-click">+</button>
+            <div className="detail-add">
+                <div>
+                    <button className="detail-click">-</button>
+                    <input className="detail-input" type="number" value={1} />
+                    <button className="detail-click">+</button>
+                </div>
+                <button className="detail-add-btn">
+                    <i className="icon-basket" />
+                       <span>Add To Cart</span>
+                </button>
             </div>
+            <div>
+                <span>Share on:</span>
+            </div>
+           
         </div>
     )
 }

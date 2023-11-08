@@ -15,7 +15,7 @@ const ShopDetailSlider = () => {
         <div className="shop-detail-slider">
             <Slider {...settings}>
                 {slider.map((item) => (
-                    <div className="">
+                    <div>
                         <img src={item.image} alt="/" />
                     </div>
                 ))}
