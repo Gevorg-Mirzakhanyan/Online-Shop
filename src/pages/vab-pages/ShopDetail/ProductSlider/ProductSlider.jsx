@@ -12,21 +12,23 @@ const ProductSlider = () => {
         arrows: false
     }
 
-    return(
+    return (
         <div>
             <h2 className="prod-title">
                 <span className="title">YOU MAY ALSO LIKE</span>
             </h2>
             <Slider  {...settings}>
                 {dataProducts.map((item) => (
-                    <div className="product-info">
-                        <img className="prod-img" src={item.image} alt="" />
-                        <div className="prod-description">
-                            <h6 className="prod-name">{item.name}</h6>
-                            <h5 className="prod-price">{item.price} <del>{item.price}</del></h5>
-                            <span className="prod-icon">{[...Array(5)].map(star => {
-                                return item.icon
-                            })}</span>(99)
+                    <div>
+                        <div className="product-info">
+                            <img className="prod-img" src={item.image} alt="" />
+                            <div className="prod-description">
+                                <h6 className="prod-name">{item.name}</h6>
+                                <h5 className="prod-price">{item.price} <del>{item.price}</del></h5>
+                                <span className="prod-icon">{[...Array(5)].map(star => {
+                                    return item.icon
+                                })}</span>(99)
+                            </div>
                         </div>
                     </div>
                 ))}

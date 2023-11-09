@@ -3,7 +3,7 @@ const Paragrafs = ({ list }) => {
 
     return (
         <div className="paragraf">
-            {list.map((item, index) => {
+            {list.map((item) => {
                     return <span>{item}</span>
                 })}
         </div>

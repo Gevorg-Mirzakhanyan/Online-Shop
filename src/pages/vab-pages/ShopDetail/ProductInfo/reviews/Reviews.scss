@@ -1,0 +1,11 @@
+.reviews {
+    display: flex;
+    gap: 40px;
+    .reviews-user {
+        display: flex;
+        gap: 20px;
+        .reviews-description {
+            max-width: 500px;
+        }
+    }
+}

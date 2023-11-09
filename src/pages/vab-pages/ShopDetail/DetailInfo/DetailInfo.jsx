@@ -13,46 +13,46 @@ const DetailInfo = () => {
             <div className="detail-info-size">
                 <span className="size-name">Sizes:</span>
                 <label>
-                    <input type="radio" />
+                    <input type="radio" name="size"/>
                     <span className="size">XS</span>
                 </label>
                 <label>
-                    <input type="radio" />
+                    <input type="radio" name="size" />
                     <span className="size">S</span>
                 </label>
                 <label>
-                    <input type="radio" />
+                    <input type="radio" name="size" />
                     <span className="size">M</span>
                 </label>
                 <label>
-                    <input type="radio" />
+                    <input type="radio" name="size" />
                     <span className="size">L</span>
                 </label>
                 <label>
-                    <input type="radio" />
+                    <input type="radio" name="size" />
                     <span className="size">XL</span>
                 </label>
             </div>
             <div className="detail-info-size">
                 <span className="size-name">Color:</span>
                 <label>
-                    <input type="radio" />
+                    <input type="radio" name="color" />
                     <span className="size">Black</span>
                 </label>
                 <label>
-                    <input type="radio" />
+                    <input type="radio" name="color"  />
                     <span className="size">White</span>
                 </label>
                 <label>
-                    <input type="radio" />
+                    <input type="radio" name="color"  />
                     <span className="size">Red</span>
                 </label>
                 <label>
-                    <input type="radio" />
+                    <input type="radio" name="color"  />
                     <span className="size">Blue</span>
                 </label>
                 <label>
-                    <input type="radio" />
+                    <input type="radio" name="color"  />
                     <span className="size">Green</span>
                 </label>
             </div>
