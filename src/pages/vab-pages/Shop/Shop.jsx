@@ -10,7 +10,7 @@ const Shop = () => {
     return(
         <div className="shop">
             <Paragrafs list={['Home/', 'Shop/', 'Shop List']} />
-            <div className="shop-page">
+            <div className="shop-page G-flex">
                 <Filter />
                 <ShopProduct />
             </div>

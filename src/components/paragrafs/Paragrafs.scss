@@ -1,8 +1,9 @@
+@import "../../assets/style/variables.scss";
 .paragraf {
         width: 100%;
-        background-color: #FFFFFF;
-        padding: 15px 15px;
-        color: #3D464D;
+        background-color: $white;
+        padding: 15px;
+        color: $grey-80;
         margin-bottom: 1.5rem;
         display: flex;
     }

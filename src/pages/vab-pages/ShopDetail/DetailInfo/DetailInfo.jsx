@@ -1,7 +1,8 @@
+import Counter from "../../../../components/counter/Counter";
 import "./DetailInfo.scss"
 const DetailInfo = () => {
     return (
-        <div className="shop-detail-info">
+        <div className="shop-detail-info G-flex-column">
             <h2 className="detail-title">Product Name Goes Here</h2>
             <span className="prod-icon">{[...Array(5)].map(star => {
                 return <i className="icon-star icon" />
@@ -56,11 +57,9 @@ const DetailInfo = () => {
                     <span className="size">Green</span>
                 </label>
             </div>
-            <div className="detail-add">
+            <div className="detail-add G-flex">
                 <div>
-                    <button className="detail-click">-</button>
-                    <input className="detail-input" type="number" value={1} />
-                    <button className="detail-click">+</button>
+                    <Counter />
                 </div>
                 <button className="detail-add-btn">
                     <i className="icon-basket" />

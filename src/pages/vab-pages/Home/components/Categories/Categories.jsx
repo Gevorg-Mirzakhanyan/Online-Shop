@@ -8,9 +8,9 @@ const Categories = () => {
             </h2>
             <div className="cat-product">
                 {data.map((item) => (
-                    <a className="cat-product-info" href="/">
+                    <a className="cat-product-info G-flex" href="/">
                         <img src={item.image} alt="" />
-                        <div className="cat-description">
+                        <div className="cat-description G-flex-column G-center">
                             <h6 className="cat-name">{item.name}</h6>
                             <span className="cat-name-info">{item.info}</span>
                         </div>

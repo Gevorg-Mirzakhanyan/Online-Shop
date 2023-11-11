@@ -1,27 +1,26 @@
+@import "../../../assets/style/variables.scss";
+
 .offer-container {
-    display: flex;
     padding: 40px 40px 0 60px;
     gap: 30px;
+
     .background-offer1 {
         background-size: cover;
         background-position: center;
         width: 100%;
         padding: 80px;
-       
+
         .offer-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: #FFFFFF;
+            color: $white;
             gap: 10px;
-            font-size: 16px;
+            font-size: $font-size-16;
             font-weight: 900;
+
             .offerBtn {
                 padding: 15px 20px;
-                font-size: 16px;
-                background-color: #FFD333;
-                color: #3D464D;
+                font-size: $font-size-16;
+                background-color: $yellow;
+                color: $grey-80;
                 border: none;
                 cursor: pointer;
             }

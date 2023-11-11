@@ -1,11 +1,75 @@
+@import "../../../../../assets/style/variables.scss";
+
 .reviews {
-    display: flex;
     gap: 40px;
+
+    .reviews-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: $grey-80;
+    }
+
     .reviews-user {
-        display: flex;
         gap: 20px;
-        .reviews-description {
-            max-width: 500px;
+
+        .reviews-user-img {
+            width: 45px;
+            height: 45px;
+            max-width: 100%;
+        }
+
+        .reviews-user-info {
+            gap: 10px;
+
+            .reviews-user-info-title {
+                line-height: 1.2;
+                color: $grey-80;
+                font-size: 1rem;
+                font-weight: 500
+            }
+
+            .icon {
+                color: $yellow;
+                font-size: 20px;
+            }
+
+            .reviews-description {
+                max-width: 500px;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #6C757D;
+                text-align: left;
+            }
+        }
+
+    }
+
+    .review-leav {
+        gap: 20px;
+        color: #6C757D;
+
+        .leave-icon {
+            color: $yellow;
+            font-size: $font-size-20;
+        }
+
+        .review-form-text {
+            margin-bottom: 20px;
+        }
+
+        .review-form-input {
+            margin-bottom: 20px;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ced4da;
+        }
+
+        .review-form-btn {
+            padding: 15px;
+            background-color: $yellow
         }
     }
 }

@@ -16,7 +16,7 @@ const Home = () => {
             <ShopInfo />
             <Categories />
             <Products title={'FEATURED PRODUCTS'} />
-            <div className="offer-container">
+            <div className="offer-container G-flex">
                 <Offer image={imgOffer1} title={'Special Offer'} discount={'20%'} />
                 <Offer image={imgOffer2} title={'Special Offer'} discount={'20%'} />
             </div>

@@ -18,7 +18,7 @@ const Contacts = () => {
             <h2 className="contact-title">
                 <span className="title">CONTACT US</span>
             </h2>
-            <div className="contact-info">
+            <div className="contact-info G-flex">
                 <ContactRegister />
                 <div>
                     <div className="map">

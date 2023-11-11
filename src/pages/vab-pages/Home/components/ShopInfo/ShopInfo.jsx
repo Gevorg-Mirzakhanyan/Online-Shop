@@ -2,7 +2,7 @@ import "./ShopInfo.scss"
 
 const ShopInfo = () => {
     return(
-        <div className="info-shop">
+        <div className="info-shop G-flex">
             <div className="info">
                 <i className="icon-check info-icon" />
                 <h5 className="info-text">Quality Product</h5>

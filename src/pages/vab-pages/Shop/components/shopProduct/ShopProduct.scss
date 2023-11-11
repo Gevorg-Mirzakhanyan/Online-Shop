@@ -1,10 +1,12 @@
+@import "../../../../../assets/style/variables.scss";
+
 .icon-section {
-    display: flex;
     gap: 20px;
 
     .icon-box {
         padding: 10px;
-        background-color: #FFFFFF;
+        background-color: $white;
+
         &:hover {
             color: #212529;
             background-color: #ececec;
@@ -20,38 +22,40 @@
     gap: 40px;
 
     .product-info {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         text-decoration: none;
-        background-color: #FFFFFF;
+        background-color: $white;
         padding: 10px;
+
         .prod-img {
             max-width: 100%;
         }
+
         .prod-description {
             text-align: center;
+
             .prod-name {
-                font-size: 24px;
+                font-size: $font-size-24;
                 margin-bottom: 0.5rem;
                 line-height: 1.2;
-                color: #3D464D;
+                color: $grey-80;
             }
+
             .prod-name-info {
                 color: #6C757D;
-                font-size: 18px;
+                font-size: $font-size-18;
             }
+
             .prod-price {
                 margin-bottom: 0.5rem;
                 line-height: 1.2;
-                color: #3D464D;
+                color: $grey-80;
                 margin-top: 10px;
-                font-size: 24px;
+                font-size: $font-size-24;
             }
+
             .prod-icon {
-                color: #FFD333;
-                font-size: 20px;
+                color: $yellow;
+                font-size: $font-size-20;
             }
         }
 

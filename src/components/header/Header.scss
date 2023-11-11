@@ -1,33 +1,31 @@
+@import "../../assets/style/variables.scss";
+
 .header {
-    background-color: #3D464D;
+    background-color: $grey-80;
     padding: 20px 60px;
-    display: flex;
-    justify-content: space-between;
     .header-nav {
-        display: flex;
         .header-title {
-            font-size: 48px;
+            font-size: $font-size-48;
             font-weight: 700;
         }
         .title-mega {
-            color: #FFD333;
-            background-color: #FFFFFF;
+            color: $yellow;
+            background-color: $white;
             padding: 0 10px;
     
         }
         .title-shop {
-            background-color: #FFD333;
-            color: #3D464D;
+            background-color: $yellow;
+            color: $grey-80;
             padding: 0 10px;
         }
       
     }
    
     .icon-container {
-        display: flex;
         gap: 10px;
         .basket {
-            color: #FFD333;
+            color: $yellow;
             font-size: 30px;
             cursor: pointer;
         }
@@ -35,11 +33,8 @@
             width: 30px;
             height: 30px;
             border-radius: 50%;
-            border: 1px solid #FFFFFF;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #FFFFFF;
+            border: 1px solid $white;
+            color: $white;
         }
     }
  

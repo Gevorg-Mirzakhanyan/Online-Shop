@@ -1,14 +1,15 @@
+@import "../../assets/style/variables.scss";
+
+
 .navbar {
-    display: flex;
-    gap: 50px;
-    padding: 10px 40px;
-    .link-container a {
-        color: #FFFFFF;
-        font-size: 24px;
-        text-decoration: none;
+    width: 100%;
+    .navbar-box {
+        gap: 50px;
+        padding: 10px 40px;
+        .link-container a {
+            color: $white;
+            font-size: $font-size-24;
+            text-decoration: none;
+        }   
     }
-    .active {
-        color: red;
-    }
-    
 }

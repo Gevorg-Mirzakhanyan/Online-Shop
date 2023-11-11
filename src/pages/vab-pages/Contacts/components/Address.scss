@@ -1,17 +1,21 @@
+@import "../../../../assets/style/variables.scss";
+
 .contact-address {
-    background-color: #FFFFFF;
+    background-color: $white;
     padding: 20px;
+
     .text-info {
         font-size: 1rem;
         font-weight: 400;
         line-height: 1.5;
-        color: #495057;
+        color: $contact-color;
         margin-bottom: 0.5rem;
-        .icon-contact{
-            color: #FFD333;
+
+        .icon-contact {
+            color: $yellow;
             margin-right: 10px;
             font-weight: 900;
         }
     }
- 
+
 }

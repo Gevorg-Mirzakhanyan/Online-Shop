@@ -46,7 +46,7 @@
 .icon-phone:before {
   content: "\e90c";
 }
-.icon-mail:before {
+.icon-email:before {
   content: "\e90d";
 }
 .icon-location:before {
@@ -67,7 +67,7 @@
 .icon-favorite:before {
   content: "\e907";
 }
-.icon-calling:before {
+.icon-call:before {
   content: "\e901";
 }
 .icon-sync:before {
@@ -76,7 +76,7 @@
 .icon-shipping:before {
   content: "\e903";
 }
-.icon-done:before {
+.icon-check:before {
   content: "\e904";
 }
 .icon-basket:before {

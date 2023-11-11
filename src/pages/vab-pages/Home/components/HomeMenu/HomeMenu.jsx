@@ -22,13 +22,13 @@ const HomeMenu = () => {
 
 
     return (
-        <div className="home-menu">
+        <div className="home-menu G-flex">
             <div className="home-slider">
                 <Slider {...settings}>
                     {backgroundData.map((item) => (
                         <div className="slider-images">
                             <div className="backgroundCarusel G-flex-column G-center" style={item.image}>
-                                <div className="home-menu-img">
+                                <div className="home-menu-img G-flex-column G-center">
                                     <h2 className="home-menu-title">{item.title}</h2>
                                     <p className="home-menu-des">{item.description}</p>
                                     <Link>
@@ -41,8 +41,8 @@ const HomeMenu = () => {
                 </Slider>
             </div>
 
-            <div className="homeOffer">
-                <Offer image={imgOffer1} title={'Special Offer'} discount={'20%'} />
+            <div className="home-offer G-flex-column">
+                <Offer image={imgOffer1} title={'Special Offer'} discount={'20%'}  />
                 <Offer image={imgOffer2} title={'Special Offer'} discount={'20%'} />
             </div>
 

@@ -1,15 +1,14 @@
+@import "../../../../../assets/style/variables.scss";
 .description {
     background-color: hsl(0, 0%, 100%);
     margin-top: 40px;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
     gap: 20px;
     .descrip-title {
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.2;
-        color: #3D464D;
+        color: $grey-80;
     }
     .descrip-text {
         font-size: 1rem;

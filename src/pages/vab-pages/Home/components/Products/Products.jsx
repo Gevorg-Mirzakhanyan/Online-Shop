@@ -8,7 +8,7 @@ const Products = (props) => {
             </h2>
             <div className="product">
                 {dataProducts.map((item) => (
-                    <a className="product-info" href="/">
+                    <a className="product-info G-flex-column G-center" href="/">
                         <img className="prod-img" src={item.image} alt="" />
                         <div className="prod-description">
                             <h6 className="prod-name">{item.name}</h6>

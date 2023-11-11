@@ -12,13 +12,13 @@ const Information = () => {
                 sit sanctus diam tempor aliquyam eirmod nonumy rebum dolor accusam, ipsum kasd eos consetetur at sit rebum, 
                 diam kasd invidunt tempor lorem, ipsum lorem elitr sanctus eirmod takimata dolor ea invidunt.
             </p>
-            <div className="description-info">
-                <div className="descrip-container">
+            <div className="description-info G-justify-between">
+                <div className="descrip-container G-flex-column">
                     <p className="descrip-paragraf">Sit erat duo lorem duo ea consetetur, et eirmod takimata.</p>
                     <p className="descrip-paragraf">Sit erat duo lorem duo ea consetetur, et eirmod takimata.</p>
                     <p className="descrip-paragraf">Sit erat duo lorem duo ea consetetur, et eirmod takimata.</p>
                 </div>
-                <div className="descrip-container">
+                <div className="descrip-container G-flex-column">
                     <p className="descrip-paragraf">Sit erat duo lorem duo ea consetetur, et eirmod takimata.</p>
                     <p className="descrip-paragraf">Sit erat duo lorem duo ea consetetur, et eirmod takimata.</p>
                     <p className="descrip-paragraf">Sit erat duo lorem duo ea consetetur, et eirmod takimata.</p>

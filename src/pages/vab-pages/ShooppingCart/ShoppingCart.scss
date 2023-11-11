@@ -1,0 +1,38 @@
+@import "../../../assets/style/variables.scss";
+
+.shop-cart {
+    padding: 60px;
+    .cart {
+        gap: 20px;
+        max-width: 60%;
+        .products-list {
+            gap: 100px;
+            background-color: $grey-80;
+            color: $white;
+            padding: 20px 20px 20px 80px;
+            font-weight: 900;
+        }
+        .shop-product-info {
+            gap: 20px;
+            padding: 20px 60px;
+            background-color: $white;
+      
+            .prod-image {
+                width: 50px;
+            }
+            .prod-info-text {
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                color: #6C757D;
+                margin-top: 15px;
+            }
+            .delete {
+                padding: 0 15px;
+                background-color: red;
+                color: white;
+            }
+        }
+    }
+
+}

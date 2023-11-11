@@ -1,13 +1,13 @@
+@import "../../../../assets/style/variables.scss";
+
 .shop-detail-info {
-    background-color: #FFFFFF;
-    display: flex;
-    flex-direction: column;
+    background-color: $white;
     gap: 20px;
     padding: 20px;
 
     .icon {
-        color: #FFD333;
-        font-size: 20px;
+        color: $yellow;
+        font-size: $font-size-20;
     }
 
 
@@ -15,7 +15,7 @@
         font-size: 1.75rem;
         font-weight: 700;
         line-height: 1.2;
-        color: #3D464D;
+        color: $grey-80;
     }
 
     .detail-description {
@@ -44,30 +44,17 @@
             color: #6C757D;
         }
     }
+
     .detail-add {
-        display: flex;
         gap: 20px;
-        .detail-click {
-            background-color: #FFD333;
-            color: #3D464D;
-            font-size: 24px;
-            border: 1px solid transparent;
-            padding: 0 0.75rem;
-            height: 50px;
-        }
-        .detail-input {
-            background-color: #F5F5F5;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            color: #495057;
-         }
+
+   
         .detail-add-btn {
             padding: 0 15px;
-            background-color: #FFD333;
-            color: #3D464D;
+            background-color: $yellow;
+            color: $grey-80;
             height: 50px;
         }
-     }
-    
+    }
+
 }

@@ -15,7 +15,7 @@ const ProductInfo = () => {
 
     return(
         <div >
-            <div className="product-information">
+            <div className="product-information G-flex">
                 <button onClick={() => handleTabClick('tab1')}  className='product-btn'>Description</button>
                 <button onClick={() => handleTabClick('tab2')} className='product-btn'>Information</button>
                 <button onClick={() => handleTabClick('tab3')} className='product-btn'>Reviews</button>

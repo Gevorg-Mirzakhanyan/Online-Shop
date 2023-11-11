@@ -13,7 +13,7 @@ const ShopDetail = () => {
     return (
         <div className="shop-detail">
             <Paragrafs list={['Home /', 'Shop /', 'Shop Detail']} />
-            <div className="details">
+            <div className="details G-flex">
                 <ShopDetailSlider />
                 <DetailInfo />
             </div>

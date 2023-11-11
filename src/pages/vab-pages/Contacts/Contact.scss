@@ -1,8 +1,12 @@
+@import "../../../assets/style/variables.scss";
+
 .contact {
     padding: 60px;
- 
+
     .contact-title {
         position: relative;
+        margin-bottom: 20px;
+
         &::after {
             position: absolute;
             content: "";
@@ -10,28 +14,29 @@
             height: 0;
             top: 50%;
             left: 0;
-            border-top: 1px dashed #bec5cb;
+            border-top: 1px dashed $border-color;
             z-index: -1;
         }
+
         .title {
             font-size: calc(1.325rem + 0.9vw);
             line-height: 1.2;
-            color: #3D464D;
+            color: $grey-80;
             font-weight: 700;
-            background-color: #F5F5F5;
+            background-color: $text-color;
             padding-right: 1rem;
         }
-    }   
+    }
+
     .contact-info {
-        display: flex;
         gap: 20px;
+
         .map {
             width: 100%;
             margin-bottom: 20px;
             padding: 20px;
-            background-color: #FFFFFF;
+            background-color: $white;
         }
-   
+
     }
 }
-

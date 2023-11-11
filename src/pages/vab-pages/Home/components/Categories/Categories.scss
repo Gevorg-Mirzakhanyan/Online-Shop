@@ -1,7 +1,11 @@
+@import "../../../../../assets/style/variables.scss";
+
 .categ-section {
     padding: 60px 40px 60px 60px;
+
     .categ-title {
         position: relative;
+
         &::after {
             position: absolute;
             content: "";
@@ -9,55 +13,52 @@
             height: 0;
             top: 50%;
             left: 0;
-            border-top: 1px dashed #bec5cb;
+            border-top: 1px dashed $border-color;
             z-index: -1;
         }
+
         .title {
             font-size: calc(1.325rem + 0.9vw);
             line-height: 1.2;
-            color: #3D464D;
+            color: $grey-80;
             font-weight: 700;
-            background-color: #F5F5F5;
+            background-color: $text-color;
             padding-right: 1rem;
         }
     }
+
     .cat-product {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         padding-top: 20px;
         gap: 40px;
+
         .cat-product-info {
-            display: flex;
-            
             text-decoration: none;
-        
+
             .cat-description {
-                display: flex;
-                flex-direction: column;
-                background-color: #FFFFFF;
-                justify-content: center;
-                align-items: center;
+                background-color: $white;
                 gap: 20px;
                 padding: 0 10px 0 20px;
+
                 .cat-name {
-                    font-size: 24px;
+                    font-size: $font-size-24;
                     margin-bottom: 0.5rem;
                     line-height: 1.2;
-                    color: #3D464D;
+                    color: $grey-80;
                 }
+
                 .cat-name-info {
                     color: #6C757D;
                     font-size: 18px;
                 }
+
                 &:hover {
-                    background-color: #FFD333;
+                    background-color: $yellow;
                 }
             }
         }
-        
+
     }
 
 }
-
-
-

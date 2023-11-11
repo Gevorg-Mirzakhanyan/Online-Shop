@@ -5,7 +5,7 @@ import ShopBtn from "./shopBtn/ShopBtn";
 const ShopProduct = () => {
     return(
         <div>
-            <div className="icon-section">
+            <div className="icon-section G-flex">
                 <button className="icon-box">
                     <i className="icon-menu_FILL" />  
                 </button>
@@ -15,7 +15,7 @@ const ShopProduct = () => {
             </div>
             <div className="product">
                 {dataProducts.map((item) => (
-                    <a className="product-info" href="/">
+                    <a className="product-info G-flex-column G-center" href="/">
                         <img className="prod-img" src={item.image} alt="" />
                         <div className="prod-description">
                             <h6 className="prod-name">{item.name}</h6>

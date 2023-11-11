@@ -1,7 +1,7 @@
 import "./Description.scss"
 const Description = () => {
     return(
-        <div className="description"> 
+        <div className="description G-flex-column"> 
             <h2 className="descrip-title">Product Description</h2>
             <p className="descrip-text">Eos no lorem eirmod diam diam, eos elitr et gubergren diam sea. Consetetur vero aliquyam invidunt duo dolores et duo sit. 
                 Vero diam ea vero et dolore rebum, dolor rebum eirmod consetetur invidunt sed sed et, lorem duo et eos elitr, 

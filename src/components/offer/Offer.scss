@@ -1,28 +1,24 @@
-  .homeOffer {
-    display: flex;
-    gap: 30px;
-    flex-direction: column;
-    width: 35%;
+@import "../../assets/style/variables.scss";
+  
+ 
     .background-offer1 {
         background-size: cover;
         background-position: center;
         width: 100%;
         padding: 40px;
         .offer-info {
-            
-         
-            color: #FFFFFF;
+            color: $white;
             gap: 10px;
-            font-size: 16px;
+            font-size: $font-size-16;
             font-weight: 900;
-            .offerBtn {
+            .offer-btn {
                 padding: 15px 20px;
-                font-size: 16px;
-                background-color: #FFD333;
-                color: #3D464D;
+                font-size: $font-size-16;
+                background-color: $yellow;
+                color: $grey-80;
                 border: none;
                 cursor: pointer;
             }
         }
     }
-}
+

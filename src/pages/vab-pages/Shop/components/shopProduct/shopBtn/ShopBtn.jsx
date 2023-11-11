@@ -3,9 +3,9 @@ import "./ShopBtn.scss"
 
 const ShopBtn = () => {
     return (
-        <div className="shop-btn">
+        <div className="shop-btn G-center">
             <nav>
-                <ul className="shop-btn-list">
+                <ul className="shop-btn-list G-flex">
                     <li>
                         <Link className="shop-btn-link disabled" to={'#'}>Previous</Link>
                     </li>
