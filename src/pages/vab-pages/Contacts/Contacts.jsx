@@ -4,6 +4,7 @@ import ContactRegister from "./components/ContactRegister"
 import Address from "./components/Address"
 import Paragrafs from "../../../components/paragrafs/Paragrafs"
 import "../../../components/paragrafs/Paragrafs.scss"
+import Title from "../../../components/title/Title"
 
 
 
@@ -15,9 +16,9 @@ const Contacts = () => {
             <div className="contact-page">
                 <Paragrafs list={['Home/', 'Contact']} />
             </div>
-            <h2 className="contact-title">
-                <span className="title">CONTACT US</span>
-            </h2>
+            <div className="contact-title">
+                <Title title={'CONTACT US'} />
+            </div>
             <div className="contact-info G-flex">
                 <ContactRegister />
                 <div>

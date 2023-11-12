@@ -4,7 +4,7 @@
     padding: 60px;
 
     .shop-cart-container {
-     
+
 
         .cart {
             gap: 20px;
@@ -21,6 +21,9 @@
                 gap: 30px;
                 padding: 20px 60px 10px 60px;
                 background-color: $white;
+                &:hover {
+                    background-color: $blue-10;
+                }
 
                 .prod-image {
                     width: 50px;
@@ -35,7 +38,7 @@
 
                 .delete {
                     background-color: red;
-                    color: white;
+                    color: $white;
                     width: 30px;
                     height: 30px;
                     margin-left: 40px;
@@ -55,29 +58,29 @@
                 background-color: $yellow;
             }
 
-            .coupon-title {
-                position: relative;
-                margin-bottom: 20px;
+            .total {
+                padding: 40px 20px;
+                background-color: $white;
 
-                &::after {
-                    position: absolute;
-                    content: "";
+                .coupon-total {
+                    margin-bottom: 15px;
+                    color: #6C757D;
+                }
+
+                .coupon-shipping {
+                    border-bottom: 1px solid $border-color;
+                    padding-bottom: 10px;
+                }
+
+                .coupon-total-result {
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+
+                .btn-checkout {
                     width: 100%;
-                    height: 0;
-                    top: 50%;
-                    left: 0;
-                    border-top: 1px dashed $border-color;
-                    z-index: -1;
                 }
 
-                .title {
-                    font-size: $font-size-20;
-                    line-height: 1.2;
-                    color: $grey-80;
-                    font-weight: 700;
-                    background-color: $text-color;
-                    padding-right: 1rem;
-                }
             }
         }
     }

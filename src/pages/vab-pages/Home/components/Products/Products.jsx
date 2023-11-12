@@ -1,11 +1,12 @@
+import Title from "../../../../../components/title/Title"
 import dataProducts from "./dataProducts"
 import "./Products.scss"
 const Products = (props) => {
     return (
         <div className="prod-section">
-            <h2 className="prod-title">
-                <span className="title">{props.title}</span>
-            </h2>
+            <div className="prod-title">
+                <Title title={'FEATURED PRODUCTS'} />
+            </div>
             <div className="product">
                 {dataProducts.map((item) => (
                     <a className="product-info G-flex-column G-center" href="/">

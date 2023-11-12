@@ -1,11 +1,12 @@
+import Title from "../../../../../components/title/Title";
 import "./Categories.scss";
 import data from "./data";
 const Categories = () => {
     return(
         <div className="categ-section">
-            <h2 className="categ-title">
-                <span className="title">CATEGORIES</span>
-            </h2>
+            <div className="categ-title">
+                <Title title={'CATEGORIES'} />
+            </div>
             <div className="cat-product">
                 {data.map((item) => (
                     <a className="cat-product-info G-flex" href="/">

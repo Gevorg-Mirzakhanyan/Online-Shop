@@ -1,27 +1,11 @@
 @import "../../../../assets/style/variables.scss";
 
 .prod-title {
-    position: relative;
     margin-top: 40px;
     margin-bottom: 40px;
-
-    &::after {
-        position: absolute;
-        content: "";
-        width: 100%;
-        height: 0;
-        top: 50%;
-        left: 0;
-        border-top: 1px dashed #bec5cb;
-        z-index: -1;
-    }
     .title {
-        font-size: calc(1.325rem + 0.9vw);
-        line-height: 1.2;
-        color: $grey-80;
+        font-size: 30px;
         font-weight: 700;
-        background-color: $text-color;
-        padding-right: 1rem;
     }
 }
 

@@ -1,6 +1,7 @@
 import Slider from "react-slick"
 import dataProducts from "../../Home/components/Products/dataProducts"
 import "./ProductSlider.scss"
+import Title from "../../../../components/title/Title"
 
 const ProductSlider = () => {
     const settings = {
@@ -14,9 +15,9 @@ const ProductSlider = () => {
 
     return (
         <div>
-            <h2 className="prod-title">
-                <span className="title">YOU MAY ALSO LIKE</span>
-            </h2>
+            <div className="prod-title">
+                <Title title={'YOU MAY ALSO LIKE'} />
+            </div>
             <Slider  {...settings}>
                 {dataProducts.map((item) => (
                     <div>

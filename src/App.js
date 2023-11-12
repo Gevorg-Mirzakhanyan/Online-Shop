@@ -9,6 +9,7 @@ import Home from './pages/vab-pages/Home/Home';
 import Shop from './pages/vab-pages/Shop/Shop';
 import ShopDetail from './pages/vab-pages/ShopDetail/ShopDetail';
 import ShoppingCart from './pages/vab-pages/ShooppingCart/ShoppingCart';
+import Checkout from './pages/vab-pages/Checkout/Checkout';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='Shop Detail' element={<ShopDetail />} /> 
         <Route path='Contacts' element={<Contacts />} /> 
         <Route path='ShoppingCart' element={<ShoppingCart />} /> 
+        <Route path='Checkout' element={<Checkout />} /> 
       </Routes>
       <Footer />
     </div>
