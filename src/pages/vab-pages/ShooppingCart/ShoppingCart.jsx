@@ -6,7 +6,7 @@ const ShoppingCart = () => {
     return (
         <div  className="shop-cart">
              <Paragrafs list={['Home/', 'Shop/', 'Shopping Cart']}/>
-            <div>
+            <div className="shop-cart-container G-justify-between">
                 <div className="cart G-flex-column">
                     <div className="products-list G-flex">
                         <span>Products</span>
@@ -27,6 +27,32 @@ const ShoppingCart = () => {
                     ))}
                 
                 </div>
+                <div className="product-coupon G-flex-column">
+                    <div>
+                        <label>
+                            <input className="coupon-input" placeholder="Coupon Code" />
+                            <button className="coupon-btn">Apply Coupon</button>
+                        </label>
+                    </div>
+                    <h2 className="coupon-title">
+                            <span className="title">CART SUMMARY</span>
+                    </h2>
+                    <div>
+                        <div  G-justify-around>
+                            <span>Subtotal</span>
+                            <span>$150</span>
+                        </div>
+                        <div>
+                            <span>Shipping</span>
+                            <span>$10</span>
+                        </div>
+                        <div>
+                            <span>Total</span>
+                            <span>$160</span>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
     )

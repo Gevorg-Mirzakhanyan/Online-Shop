@@ -47,6 +47,16 @@
 
     .detail-add {
         gap: 20px;
+        .shopdetail-counter{
+            .counter-click {
+                width: 50px;
+                height: 50px;
+            }
+            .counter-input {
+                width: 50px;
+                height: 50px;
+            }
+        }
 
    
         .detail-add-btn {
@@ -55,6 +65,9 @@
             color: $grey-80;
             height: 50px;
         }
+    }
+    .detail-icon {
+        gap: 20px;
     }
 
 }

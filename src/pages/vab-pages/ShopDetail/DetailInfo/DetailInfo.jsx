@@ -1,6 +1,17 @@
+import { useContext, useState } from "react";
 import Counter from "../../../../components/counter/Counter";
+
 import "./DetailInfo.scss"
+import { ProductContext } from "../../../../context/ProductContext";
 const DetailInfo = () => {
+
+    const {addToProduct} = useContext(ProductContext)
+
+    const [count, setCount] = useState(0)
+    const handleClickAdd = () => {
+        addToProduct(count)
+    }
+
     return (
         <div className="shop-detail-info G-flex-column">
             <h2 className="detail-title">Product Name Goes Here</h2>
@@ -58,16 +69,22 @@ const DetailInfo = () => {
                 </label>
             </div>
             <div className="detail-add G-flex">
-                <div>
-                    <Counter />
+                <div className="shopdetail-counter">
+                    <Counter setCount={setCount} />
                 </div>
-                <button className="detail-add-btn">
+                <button onClick={handleClickAdd} className="detail-add-btn">
                     <i className="icon-basket" />
                        <span>Add To Cart</span>
                 </button>
             </div>
-            <div>
+            <div className="detail-icon G-flex">
                 <span>Share on:</span>
+                <div>
+                    <i className="icon-facebook" />
+                    <i className="icon-twitter" />
+                    <i className="icon-linkedin" />
+                    <i className="icon-instagram" />
+                </div>
             </div>
            
         </div>

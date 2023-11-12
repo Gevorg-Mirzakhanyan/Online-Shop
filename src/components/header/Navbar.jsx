@@ -1,7 +1,11 @@
+import { useContext } from "react"
 import "./Navbar.scss"
 import { NavLink } from "react-router-dom"
+import { ProductContext } from "../../context/ProductContext"
 
 const Navbar = () => {
+    const { productList } = useContext(ProductContext)
+
     return(
     <nav className="navbar G-justify-around">
         <div  className="navbar-box G-flex">
@@ -21,7 +25,7 @@ const Navbar = () => {
         <div>
             <NavLink to={'ShoppingCart'}  className="icon-container G-flex ">
                 <i className="icon-basket basket"/> 
-                <span className="box G-center">0</span>
+                <span className="box G-center">{productList}</span>
             </NavLink>
         </div>
     </nav>

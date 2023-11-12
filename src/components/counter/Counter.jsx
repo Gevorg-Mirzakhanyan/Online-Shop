@@ -1,17 +1,24 @@
 import { useState } from "react";
 import "./Counter.scss";
-const Counter = () => {
-    const [count, setCount] = useState(0);
+import { useEffect } from "react";
+const Counter = ({ setCount }) => {
+    const [count, setCounter] = useState(1);
 
     const increment = () => {
-        setCount(count + 1);
+        setCounter(count + 1);
     };
 
     const decrement = () => {
-        setCount(count - 1);
-      };
-    return(
-        <div className="counter">
+        if (count > 1) {
+            setCounter(count - 1);
+        }
+    };
+
+    useEffect(() => {
+        setCount(count)
+    }, [count])
+    return (
+        <div className="counter G-flex">
             <button onClick={decrement} className="counter-click">-</button>
             <input className="counter-input" type="number" value={count} />
             <button onClick={increment} className="counter-click">+</button>
