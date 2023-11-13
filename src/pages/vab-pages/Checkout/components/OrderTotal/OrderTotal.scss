@@ -1,0 +1,20 @@
+@import "../../../../../assets/style/variables.scss";
+
+.order-total-box {
+    background-color: $white;
+    padding: 20px;
+    gap: 20px;
+
+    .product-name {
+        color: #6C757D;
+    }
+
+    .product-name-border {
+        border-bottom: 1px solid $border-color;
+        padding-bottom: 20px;
+    }
+
+    .total-result {
+        font-size: 20px;
+    }
+}

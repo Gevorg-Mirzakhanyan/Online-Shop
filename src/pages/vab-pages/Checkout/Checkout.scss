@@ -2,19 +2,52 @@
 
 .checkout {
     padding: 60px;
-    .billing-address {
+
+    .checkout-container {
         gap: 40px;
-        background-color: $white;
-        padding: 20px;
-        .billing-address-box {
-            gap: 10px;
-            color: #6C757D;
-        .address-input {
-            padding: 10px;
-            border: 1px solid $border-color;
-            font-size: 16px;
-            width: 300px;
+
+
+        .total-payment {
+
+            width: 100%;
+
+            .order-total-box {
+                background-color: $white;
+                padding: 20px;
+                gap: 20px;
+
+                .product-name {
+                    color: #6C757D;
+                }
+
+                .product-name-border {
+                    border-bottom: 1px solid $border-color;
+                    padding-bottom: 20px;
+                }
+
+                .total-result {
+                    font-size: 20px;
+                }
+            }
+            .payment {
+                margin-top: 20px;
+                .payment-box {
+                    background-color: $white;
+                    padding: 20px;
+                    gap: 20px;
+                    .payment-text {
+                        color: #6C757D;
+                        margin-left: 10px;
+                    }
+                    .payment-btn {
+                        width: 100%;
+                        padding: 20px;
+                        background-color: $yellow;
+                    }
+                }
+
+            }
         }
+
     }
-}
 }

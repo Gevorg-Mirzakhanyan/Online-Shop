@@ -1,0 +1,20 @@
+@import "../../../../../assets/style/variables.scss";
+
+.payment {
+    margin-top: 20px;
+    .payment-box {
+        background-color: $white;
+        padding: 20px;
+        gap: 20px;
+        .payment-text {
+            color: #6C757D;
+            margin-left: 10px;
+        }
+        .payment-btn {
+            width: 100%;
+            padding: 20px;
+            background-color: $yellow;
+        }
+    }
+
+}
