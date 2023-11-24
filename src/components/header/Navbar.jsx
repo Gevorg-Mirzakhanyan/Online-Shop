@@ -7,23 +7,31 @@ const Navbar = () => {
     const { productList } = useContext(ProductContext)
 
     return(
-    <nav className="navbar G-justify-around">
-        <div  className="navbar-box G-flex">
+    <nav className="navbar G-justify-between">
+        <div  className="navbar-box G-center">
             <div className="link-container">
                 <NavLink to={'/'}>Home</NavLink>
             </div>
             <div className="link-container">
                 <NavLink to={'Shop'}>Shop</NavLink>
             </div>
-            <div className="link-container">
+            {/* <div className="link-container">
                 <NavLink to={'Shop Detail'}>Shop Detail</NavLink>
-            </div>
+            </div> */}
             <div className="link-container">
                 <NavLink to={'Contacts'}>Contact</NavLink>
             </div>
         </div>
+        <div className="login-register G-center">
+            <div className="link-container">
+                <NavLink to={'Login'}>Login</NavLink>
+            </div>
+            <div className="link-container">
+                <NavLink to={'Registration'}>Registration</NavLink>
+            </div>
+        </div>
         <div>
-            <NavLink to={'ShoppingCart'}  className="icon-container G-flex ">
+            <NavLink to={'ShoppingCart'}  className="icon-container G-center ">
                 <i className="icon-basket basket"/> 
                 <span className="box G-center">{productList}</span>
             </NavLink>

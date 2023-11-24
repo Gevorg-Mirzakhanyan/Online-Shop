@@ -2,41 +2,22 @@
 
 .header {
     background-color: $grey-80;
-    padding: 20px 60px;
+    padding: 10px 60px;
     .header-nav {
         .header-title {
-            font-size: $font-size-48;
+            font-size: $font-size-32;
             font-weight: 700;
         }
         .title-mega {
             color: $yellow;
             background-color: $white;
-            padding: 0 10px;
+            padding: 10px;
     
         }
         .title-shop {
             background-color: $yellow;
             color: $grey-80;
-            padding: 0 10px;
-        }
-      
-    }
-   
-    .icon-container {
-        gap: 10px;
-        .basket {
-            color: $yellow;
-            font-size: 30px;
-            cursor: pointer;
-        }
-        .box {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            border: 1px solid $white;
-            color: $white;
+            padding: 10px;
         }
     }
- 
-
 }

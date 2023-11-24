@@ -14,9 +14,9 @@ const Counter = ({ setCount }) => {
         }
     };
 
-    // useEffect(() => {
-    //     setCount(count)
-    // }, [count])
+    useEffect(() => {
+        setCount && setCount(count)
+    }, [count])
     return (
         <div className="counter G-flex">
             <button onClick={decrement} className="counter-click">-</button>

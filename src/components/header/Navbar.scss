@@ -3,13 +3,41 @@
 
 .navbar {
     width: 100%;
+    padding: 0 20px;
     .navbar-box {
-        gap: 50px;
-        padding: 10px 40px;
+        gap: 30px;
         .link-container a {
             color: $white;
-            font-size: $font-size-24;
+            font-size: $font-size-18;
             text-decoration: none;
         }   
     }
+    .login-register {
+        gap: 10px;
+        .link-container a {
+            color: $yellow;
+            font-size: $font-size-18;
+            text-decoration: none;
+        } 
+    }
+ 
+    .icon-container {
+        margin-top: 10px;
+        gap: 10px;
+        .basket {
+            color: $yellow;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .box {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid $white;
+            color: $white;
+        }
+    }
+ 
+ 
+
 }
