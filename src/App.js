@@ -1,50 +1,34 @@
 
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import './assets/style/index.scss'
-import Footer from './components/footer/Footer';
-import Header from './components/header/Header';
-import Contacts from './pages/vab-pages/Contacts/Contacts';
-import Home from './pages/vab-pages/Home/Home';
-import Shop from './pages/vab-pages/Shop/Shop';
-import ShopDetail from './pages/vab-pages/ShopDetail/ShopDetail';
-import ShoppingCart from './pages/vab-pages/ShooppingCart/ShoppingCart';
-import Checkout from './pages/vab-pages/Checkout/Checkout';
-import Login from './pages/vab-pages/Login/Login';
-import Registration from './pages/vab-pages/Registration/Registration';
 import Admin from './pages/admin-pages/Admin';
 import { useEffect, useState } from 'react';
+import { useUserContext } from './context/users-context';
+import GuestPages from './pages/vab-pages/GuestPages';
 
 
 
 function App() {
-
+  const location = useLocation()
   const [token, setToken] = useState('')
+  const userData = useUserContext()
 
   useEffect(() => {
-      let tokenData = localStorage.getItem('loginData')
+      let tokenData = localStorage.getItem('token')
       setToken(tokenData)
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+}, [location.pathname]);
+
+if (userData.userLoading) {
+  return <p>Loading.........</p>
+}
+
   return (
-
-    token ? <Admin /> : 
-    (<div className="App">
-      <Header />
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='Shop' element={<Shop />} /> 
-        <Route path='Shop Detail' element={<ShopDetail />} /> 
-        <Route path='Contacts' element={<Contacts />} /> 
-        <Route path='ShoppingCart' element={<ShoppingCart />} /> 
-        <Route path='Checkout' element={<Checkout />} /> 
-        <Route path='Login' element={<Login />} /> 
-        <Route path='Registration' element={<Registration />} /> 
- 
-      </Routes>
-      <Footer />
-
-    </div>)
+    token && userData.user  ? <Admin /> : <GuestPages />
   );
 }
 

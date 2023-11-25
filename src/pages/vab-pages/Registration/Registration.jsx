@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import "./Registration.scss"
+import { createUser } from "../../../platform/api/users-api";
 const Registration = () => {
 
     const [loading, setLoading] = useState(false)
@@ -18,7 +19,7 @@ const Registration = () => {
     }
 
 
-    const handleClick = () => {
+    const handleClick = async () => {
         // setLoginError('');
         // setPasswordError('');
 
@@ -38,22 +39,16 @@ const Registration = () => {
         // }
       
         if(!loading && regFormData.email && regFormData.password && regFormData.confirmPassword && regFormData.password === regFormData.confirmPassword) {
-            fetch (`${process.env.REACT_APP_API_URL}/users`, {
-                method: 'POST',
-                body: JSON.stringify(regFormData),
-                headers: {
-                    'Content-Type' : 'appLication/json'
-                }
-            }).then(data => {
-                if(data) {
-                    setRegFormData ( {
-                        email: '',
-                        password: '',
-                        confirmPassword: '',
-                    })
-                    setLoading(false)
-                }
-            })
+            setLoading(true)
+            const result = await createUser(regFormData)
+            if(result) {
+                setRegFormData({
+                    email: '',
+                    password: '',
+                    confirmPassword: ''
+                })
+                setLoading(false)
+            }
         }
     }
 
@@ -90,7 +85,7 @@ const Registration = () => {
                     />
                     {/* {passwordError && <div>{passwordError}</div>} */}
                 </div>
-                <button onClick={handleClick} className="register-btn">{loading ? 'Loading...' : 'Registration'}</button>
+                <button onClick={handleClick} className="register-btn">{loading ? 'loading....' : 'Registration'}</button>
             </div>
         </div>
 

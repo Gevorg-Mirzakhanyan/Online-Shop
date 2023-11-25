@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import "./Login.scss"
 import { useState } from "react";
-import axios from "axios";
+import { getUsers } from "../../../platform/api/users-api";
 const Login = () => {
 
     const [loading, setLoading] = useState(false)
@@ -48,7 +48,7 @@ const Login = () => {
     // }
 
     const loginUser = async () => {
-        const result = await axios.get(`${process.env.REACT_APP_API_URL}/users`)
+        const result = await getUsers()
         if(result && result.data.length) {
             const user = result.data.find(item => item.email === logFormData.email && item.password === logFormData.password)
             if(user) {
