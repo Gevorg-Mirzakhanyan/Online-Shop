@@ -5,7 +5,7 @@ import { createContext } from "react";
 
 export const ProductContext = createContext({});
 
-export const UserProvider = ({children}) => {
+export const ProductProvider = ({children}) => {
     const [productList, setProductList] = useState(0);
     const addToProduct = (productData) => {
         setProductList([ productData])

@@ -1,0 +1,18 @@
+.admin-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+    height: 100vh;
+    background-color: white;
+    .admin-logo {
+        border: 1px solid black;
+        padding: 10px;
+    }
+    .admin-link {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+

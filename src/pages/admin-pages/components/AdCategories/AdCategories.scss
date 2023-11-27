@@ -1,0 +1,17 @@
+.admin-category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    .admin-category-btn {
+        background-color: yellow;
+        color: #FFFFFF;
+        padding: 10px 20px;
+    }   
+
+    .ad-catgeory-input {
+        border: 1px solid black;
+        padding: 10px 20px;
+    }
+}

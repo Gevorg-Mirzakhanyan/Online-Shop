@@ -1,0 +1,11 @@
+.admin-products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    .ad-product-input {
+        border: 1px solid black;
+        padding: 10px 20px;
+    }
+}

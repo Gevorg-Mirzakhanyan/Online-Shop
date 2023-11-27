@@ -1,0 +1,10 @@
+.log-btn {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 10px 60px;
+    background-color: white;
+    .log-btn-click {
+        background-color: white;
+    }
+}
