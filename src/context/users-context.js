@@ -21,6 +21,9 @@ export const UserProvider = ({children}) => {
               if (user) {
                   setUSerLoading(false)
                   setUserData(user)
+              }else{
+                setUSerLoading(false)
+
               }
           }else{
               setUSerLoading(false)

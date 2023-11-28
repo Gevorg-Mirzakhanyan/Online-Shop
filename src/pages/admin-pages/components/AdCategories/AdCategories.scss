@@ -14,4 +14,20 @@
         border: 1px solid black;
         padding: 10px 20px;
     }
+    .modal-category {
+        width: 100%;
+        gap: 40px;
+        .apload-img {
+            display: none;
+        }
+    }
+}
+
+
+.selected-image{
+    width: 200px;
+    height: 200px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
