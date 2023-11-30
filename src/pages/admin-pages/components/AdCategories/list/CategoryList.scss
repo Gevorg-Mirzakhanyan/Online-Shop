@@ -1,0 +1,27 @@
+.list-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    border: 2px solid #F5F5F5F5;
+    padding: 10px;
+    .list-img-name-box {
+        gap: 20px;
+        .list-img {
+            width: 50px;
+            height: 50px;
+        }
+        .list-name {
+            color: #3D464D;
+        }
+
+
+    }
+    .list-btn-box {
+        gap: 20px;
+        .list-btn {
+            border: 2px solid yellow;
+            padding: 10px;
+        }
+    }
+}

@@ -1,5 +1,5 @@
 import "./Admin.scss";
-import {  NavLink, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import AdProducts from "./components/AdProducts/AdProducts";
 import AdCategories from "./components/AdCategories/AdCategories";
 import AdSettings from "./components/AdSettings/AdSettings";

@@ -1,19 +1,15 @@
 import "./Modal.scss"
-export const Modal = ({ onClose,children }) => {
-
-
+export const Modal = ({ onClose, children }) => {
+    
     return (
-        <div className="modal-container">
-           
+        <div className="modal-container G-center">
             <div className="modal">
-            <span onClick={onClose}>X</span>
-            
+                <span onClick={onClose}>X</span>
                 <div className='modal-body'>
                     {children}
                 </div>
             </div>
             <div className='modal-bg' onClick={onClose}></div>
-       
         </div>
     )
 }

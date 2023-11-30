@@ -11,4 +11,3 @@ export const addCategory = async (data)=>{
     return await axios.post(`${process.env.REACT_APP_API_URL}/${content}`, data)
 }
 
-//    npm i --force
