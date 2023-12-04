@@ -14,11 +14,11 @@
     }
     .nav-admin {
         grid-area: n;
+        height: 100%;
     }
     .admin-main {
         grid-area: m;
         background-color: white;
-        height: 100vh;
         padding: 40px;
     }
 

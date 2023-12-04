@@ -1,24 +1,46 @@
 import { useEffect, useState } from "react";
 import "./AdProducts.scss"
 import { Modal } from "../../../../components/modal/Modal";
-
+import { addProduct, getProduct } from "../../../../platform/api/product-api";
+import ListProduct from "./listProduct/ListProduct";
 
 const AdProducts = () => {
 
     const [isOpen, setIsModal] = useState(false);
-    const [myCategoryList, setCategoryList] = useState([])
+    const [myProductList, setProductList] = useState([])
     const [formData, setFormData] = useState({
         image: '',
+        category: '',
         name: '',
+        description: '',
+        price: '',
+        rate: '',
     })
 
-    function handleChange(e) {
-        setFormData({ ...formData, name: e.target.value })
+    function handleChangeProductCategory(e) {
+        setFormData({...formData, category: e.target.value})
     }
 
-    // useEffect(() => {
-    //     getCategoryListData()
-    // }, [])
+    function handleChangeProductName(e) {
+        setFormData({...formData, name: e.target.value})
+    }
+
+    function handleChangeProductDesc(e) {
+        setFormData({...formData, description: e.target.value})
+    }
+
+    function handleChangeProductPrice(e) {
+        setFormData({...formData, price: e.target.value})
+    }
+
+    function handleChangeProductRate(e) {
+        setFormData({...formData, rate: e.target.value})
+    }
+
+
+    useEffect(() => {
+        getProductListData()
+    }, [])
     function encodeImageFileAsURL(element) {
         const file = element.target.files[0];
         if (file) {
@@ -27,6 +49,21 @@ const AdProducts = () => {
                 setFormData({ ...formData, image: reader.result })
             }
             reader.readAsDataURL(file);
+        }
+    }
+
+    const addProductClick = async () => {
+        const result = await addProduct(formData)
+        if (result.data) {
+            getProductListData()
+            setIsModal(false)
+        }
+    }
+
+    const getProductListData = async () => {
+        const result = await getProduct()
+        if (result.data) {
+            setProductList(result.data)
         }
     }
 
@@ -44,28 +81,29 @@ const AdProducts = () => {
                                 <input onChange={encodeImageFileAsURL} className="upload-img" type="file" placeholder="Image Apload" />
                             </label>
                             <label>
-                                <input className="product-input" placeholder="Select Category" />
+                                <input onChange={handleChangeProductCategory} className="product-input" placeholder="Select Category" />
                             </label>
                             <label>
-                                <input className="product-input" placeholder="Create Product Name" />
+                                <input onChange={handleChangeProductName} className="product-input" placeholder="Create Product Name" />
                             </label>
                             <label>
-                                <input className="product-input" placeholder="Create Product description"/>
+                                <input onChange={handleChangeProductDesc} className="product-input" placeholder="Create Product description"/>
                             </label>
                             <label>
-                                <input className="product-input" placeholder="Create Price" />
+                                <input onChange={handleChangeProductPrice} className="product-input" placeholder="Create Price" />
                             </label>
                             <label>
-                                <input className="product-input" placeholder="Create Rate" />
+                                <input onChange={handleChangeProductRate} className="product-input" placeholder="Create Rate" />
                             </label>
                         </div>
                    
                         <div>
-                            <button className="modal-btn">Add</button>
+                            <button className="modal-btn" onClick={addProductClick}>Add</button>
                             <button className="modal-btn" onClick={() => setIsModal(false)}>Delete</button>
                         </div>
                     </div>
                 </Modal> : null}
+                <ListProduct myProductList={myProductList} />
                 </div>
     )
 }

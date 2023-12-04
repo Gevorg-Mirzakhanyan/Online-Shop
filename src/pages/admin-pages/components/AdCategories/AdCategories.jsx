@@ -10,7 +10,7 @@ const AdCategories = () => {
         image: '',
         name: '',
     })
-
+    
     function handleChange(e) {
         setFormData({ ...formData, name: e.target.value })
     }
