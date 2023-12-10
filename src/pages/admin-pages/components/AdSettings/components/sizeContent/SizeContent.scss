@@ -1,0 +1,25 @@
+@import "../../../../../../assets/style/variables.scss";
+.add-size {
+    padding: 10px 20px;
+    background-color: $yellow;
+    color: $grey-80;
+    margin-bottom: 20px;
+}
+.size-item {
+    gap: 10px;
+    margin-bottom: 20px;
+    .size-name {
+        color: $blue-dark;
+        font-size: 20px;
+        margin-bottom: 5px;
+     }
+    .size-action {
+        gap: 10px;
+     
+        .size-btn {
+            padding: 10px;
+            background-color: $text-color;
+            color: $grey-80;
+        }
+    }
+}

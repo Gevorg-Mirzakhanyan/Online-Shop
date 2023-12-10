@@ -4,22 +4,17 @@
     background-color: #f5f5f5;
     display: grid;
     grid-template-areas: 
-    "n h h"
+    "n m m"
     "n m m";
     grid-template-rows: 60px 1fr;
     grid-template-columns: 2fr 10fr;
     gap: 10px;
-    .header-admin {
-        grid-area: h;
-    }
+   
     .nav-admin {
         grid-area: n;
-        height: 100%;
     }
     .admin-main {
         grid-area: m;
-        background-color: white;
-        padding: 40px;
     }
 
 }

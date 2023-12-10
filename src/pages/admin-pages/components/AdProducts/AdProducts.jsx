@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import "./AdProducts.scss"
-import { Modal } from "../../../../components/modal/Modal";
-import { addProduct, getProduct } from "../../../../platform/api/product-api";
+import  Modal  from "../../../../components/modal/Modal";
+import { addProduct, deleteProduct, getProduct } from "../../../../platform/api/product-api";
 import ListProduct from "./listProduct/ListProduct";
+import AdHeader from "../../../../components/adHeader/AdHeader";
+
 
 const AdProducts = () => {
 
@@ -14,31 +16,16 @@ const AdProducts = () => {
         name: '',
         description: '',
         price: '',
-        rate: '',
+        count: '',
+        size: '',
+        color: ''
     })
 
-    function handleChangeProductCategory(e) {
-        setFormData({...formData, category: e.target.value})
+    function handleChange(e) {
+        setFormData({ ...formData, [e.target.name]: e.target.value })
     }
-
-    function handleChangeProductName(e) {
-        setFormData({...formData, name: e.target.value})
-    }
-
-    function handleChangeProductDesc(e) {
-        setFormData({...formData, description: e.target.value})
-    }
-
-    function handleChangeProductPrice(e) {
-        setFormData({...formData, price: e.target.value})
-    }
-
-    function handleChangeProductRate(e) {
-        setFormData({...formData, rate: e.target.value})
-    }
-
-
-    useEffect(() => {
+ 
+     useEffect(() => {
         getProductListData()
     }, [])
     function encodeImageFileAsURL(element) {
@@ -67,44 +54,102 @@ const AdProducts = () => {
         }
     }
 
+    const handleDeleteProduct = async () => {
+        await deleteProduct(myProductList._id);
+        getProductListData();
+
+    };
+
+
     return (
         <div>
-            <div  className="admin-category">
-                <button onClick={() => setIsModal(true)} className="admin-category-btn">Add Product</button>
-            </div>
-            {isOpen ?
-                <Modal onClose={() => setIsModal(false)}>
-                    <div className="modal-product">
-                        <div>
-                            <label className="upload-label">
-                                {formData.image ? <div className="selected-image" style={{ backgroundImage: `url('${formData.image}')` }}></div> : <p>Upload image</p>}
-                                <input onChange={encodeImageFileAsURL} className="upload-img" type="file" placeholder="Image Apload" />
-                            </label>
-                            <label>
-                                <input onChange={handleChangeProductCategory} className="product-input" placeholder="Select Category" />
-                            </label>
-                            <label>
-                                <input onChange={handleChangeProductName} className="product-input" placeholder="Create Product Name" />
-                            </label>
-                            <label>
-                                <input onChange={handleChangeProductDesc} className="product-input" placeholder="Create Product description"/>
-                            </label>
-                            <label>
-                                <input onChange={handleChangeProductPrice} className="product-input" placeholder="Create Price" />
-                            </label>
-                            <label>
-                                <input onChange={handleChangeProductRate} className="product-input" placeholder="Create Rate" />
-                            </label>
-                        </div>
-                   
-                        <div>
-                            <button className="modal-btn" onClick={addProductClick}>Add</button>
-                            <button className="modal-btn" onClick={() => setIsModal(false)}>Delete</button>
-                        </div>
+            <div className="admin-product-header G-flex-column">
+                <AdHeader title='Products' />
+                <div className="admin-category">
+                    <button onClick={() => setIsModal(true)} className="admin-category-btn">Add Product</button>
+                    <div>
+                        <ul className="admin-product-list G-justify-between">
+                            <li>Product Name</li>
+                            <li>Category ID</li>
+                            <li>Description</li>
+                            <li>Price</li>
+                            <li>Count</li>
+                            <li>Size</li>
+                            <li>Color</li>
+                            <li>Actions</li>
+                        </ul>
                     </div>
-                </Modal> : null}
-                <ListProduct myProductList={myProductList} />
+
+                    {isOpen ?
+                        <Modal title={'Add Products'} onClose={() => setIsModal(false)}>
+                            <div className="modal-product">
+                                <div>
+                                    <label className="upload-label">
+                                        {formData.image ? <div className="selected-image" style={{ backgroundImage: `url('${formData.image}')` }}></div> : <p>Upload image</p>}
+                                        <input 
+                                            onChange={encodeImageFileAsURL} 
+                                            className="upload-img" 
+                                            type="file" 
+                                            placeholder="Image Apload" 
+                                        />
+                                    </label>
+                                    <label>
+                                        <input 
+                                            onChange={handleChange} 
+                                            className="product-input" 
+                                            placeholder="Create Product Name" 
+                                            name="name"
+                                            value={formData.name}
+                                        />
+                                    </label>
+                                    <label>
+                                        <input 
+                                            onChange={handleChange} 
+                                            className="product-input" 
+                                            placeholder="Select Category" 
+                                            name="category"
+                                            value={formData.category}
+                                        />
+                                    </label>
+                                   <label>
+                                        <input 
+                                            onChange={handleChange} 
+                                            className="product-input" 
+                                            placeholder="Create Product description" 
+                                            name="description"
+                                            value={formData.description}
+                                        />
+                                    </label>
+                                    <label>
+                                        <input 
+                                            onChange={handleChange} 
+                                            className="product-input" 
+                                            placeholder="Create Price" 
+                                            name="price"
+                                            value={formData.price}
+                                        />
+                                    </label>
+                                    <label>
+                                        <input 
+                                            onChange={handleChange} 
+                                            className="product-input" 
+                                            placeholder="Create Count" 
+                                            name="count"
+                                            value={formData.count}
+                                        />
+                                    </label>
+                                </div>
+
+                                <div>
+                                    <button className="modal-btn" onClick={addProductClick}>Add</button>
+                                    <button className="modal-btn" onClick={() => setIsModal(false)}>Cancel</button>
+                                </div>
+                            </div>
+                        </Modal> : null}
+                    <ListProduct myProductList={myProductList} onDeletePicture={() => handleDeleteProduct()}  />
                 </div>
+            </div>
+        </div>
     )
 }
 

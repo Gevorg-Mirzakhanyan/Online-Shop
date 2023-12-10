@@ -15,9 +15,6 @@ const Navbar = () => {
             <div className="link-container">
                 <NavLink to={'Shop'}>Shop</NavLink>
             </div>
-            {/* <div className="link-container">
-                <NavLink to={'Shop Detail'}>Shop Detail</NavLink>
-            </div> */}
             <div className="link-container">
                 <NavLink to={'Contacts'}>Contact</NavLink>
             </div>

@@ -1,11 +1,14 @@
 import "./Modal.scss"
-export const Modal = ({ onClose, children }) => {
+const Modal = ({ onClose, children, title }) => {
     
     return (
         <div className="modal-container G-center">
             <div className="modal">
-                <span onClick={onClose}>X</span>
-                <div className='modal-body'>
+                <div className="G-justify-between">
+                    {title ? <h3 className="modal-title">{title}</h3> : null}
+                    <span className="modal-x" onClick={onClose}>X</span>
+                </div>
+                <div className='modal-body G-center'>
                     {children}
                 </div>
             </div>
@@ -13,3 +16,5 @@ export const Modal = ({ onClose, children }) => {
         </div>
     )
 }
+
+export default Modal;

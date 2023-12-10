@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import "./AdCategories.scss"
-import { Modal } from "../../../../components/modal/Modal";
+import  Modal from "../../../../components/modal/Modal";
 import { addCategory, getCategory } from "../../../../platform/api/category-api";
 import CategoryList from "./list/CategoryList";
+import AdHeader from "../../../../components/adHeader/AdHeader";
 const AdCategories = () => {
     const [isOpen, setIsModal] = useState(false);
     const [myCategoryList, setCategoryList] = useState([])
@@ -53,28 +54,32 @@ const AdCategories = () => {
 
     return (
         <div>
-            <div  className="admin-category">
-                <button onClick={() => setIsModal(true)} className="admin-category-btn">Add Category</button>
+            <div className="admin-main">
+                <AdHeader className="header-admin" title='Category' />
+                <div  className="admin-category">
+                    <button onClick={() => setIsModal(true)} className="admin-category-btn">Add Category</button>
+                    {isOpen ?
+                    <Modal title={'Add Category'} onClose={() => setIsModal(false)}>
+                        
+                        <div className="modal-category">
+                            <div className="modal-apload-box G-center G-flex-column">
+                                <label className="apload-label">
+                                    {formData.image ? <div className="selected-image" style={{ backgroundImage: `url('${formData.image}')` }}></div> : <p>Upload image</p>}
+                                    <input onChange={encodeImageFileAsURL} className="apload-img" type="file" placeholder="Image Apload" />
+                                </label>
+                                <label>
+                                    <input className="modal-img-name" onChange={handleChange} placeholder="Create image name..." />
+                                </label>
+                            </div>
+                            <div className="modal-btn-box G-center">
+                                <button className="modal-btn" onClick={handleClick}>Add</button>
+                                <button className="modal-btn" onClick={() => setIsModal(false)}>Cancel</button>
+                            </div>
+                        </div>
+                    </Modal> : null}
+                    <CategoryList myCategoryList={myCategoryList} onDeletePicture={handleDeletePicture} />
+                </div>
             </div>
-            {isOpen ?
-                <Modal onClose={() => setIsModal(false)}>
-                    <div className="modal-category">
-                        <div className="modal-apload-box G-center G-flex-column">
-                            <label className="apload-label">
-                                {formData.image ? <div className="selected-image" style={{ backgroundImage: `url('${formData.image}')` }}></div> : <p>Upload image</p>}
-                                <input onChange={encodeImageFileAsURL} className="apload-img" type="file" placeholder="Image Apload" />
-                            </label>
-                            <label>
-                                <input className="modal-img-name" onChange={handleChange} placeholder="Create image name..." />
-                            </label>
-                        </div>
-                        <div className="modal-btn-box G-center">
-                            <button className="modal-btn" onClick={handleClick}>Add</button>
-                            <button className="modal-btn" onClick={() => setIsModal(false)}>Delete</button>
-                        </div>
-                    </div>
-                </Modal> : null}
-            <CategoryList myCategoryList={myCategoryList} onDeletePicture={handleDeletePicture} />
         </div>
     )
 }

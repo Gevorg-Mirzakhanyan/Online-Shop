@@ -1,0 +1,14 @@
+@import "../../../../assets/style/variables.scss";
+.notification-section {
+    background-color: $white;
+    padding: 20px;
+    margin-top: 20px;
+    height: 100vh;
+    .notification-box {
+        border-bottom: 2px solid $contact-color;
+        padding: 20px;
+        .notification-info {
+            margin-right: 20px;
+        }
+    }
+}

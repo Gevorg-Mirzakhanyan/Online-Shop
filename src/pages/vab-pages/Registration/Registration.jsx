@@ -2,6 +2,7 @@
 import { useState } from "react";
 import "./Registration.scss"
 import { createUser } from "../../../platform/api/users-api";
+import { useNavigate } from "react-router-dom";
 const Registration = () => {
 
     const [loading, setLoading] = useState(false)
@@ -11,33 +12,15 @@ const Registration = () => {
         confirmPassword: '',
     })
 
-    // const [loginError, setLoginError] = useState('');
-    // const [passwordError, setPasswordError] = useState('');
+
 
     const handleChange = (e) => {
         setRegFormData({...regFormData, [e.target.name]:e.target.value})
     }
 
-
+    const navigate = useNavigate()
     const handleClick = async () => {
-        // setLoginError('');
-        // setPasswordError('');
 
-        // if (regFormData.email.trim() === '') {
-        //     setLoginError('Login is required.');
-        //     return;
-        // }
-
-        // if (regFormData.password.trim() === '') {
-        //     setPasswordError('Password is required.');
-        //     return;
-        // }
-
-        // if (regFormData.confirmPassword.trim() === '' && regFormData.password !== regFormData.confirmPassword) {
-        //     setPasswordError('Password is different.');
-        //     return;
-        // }
-      
         if(!loading && regFormData.email && regFormData.password && regFormData.confirmPassword && regFormData.password === regFormData.confirmPassword) {
             setLoading(true)
             const result = await createUser(regFormData)
@@ -48,8 +31,10 @@ const Registration = () => {
                     confirmPassword: ''
                 })
                 setLoading(false)
+                navigate('/Login');
             }
         }
+     
     }
 
     return(
@@ -65,25 +50,22 @@ const Registration = () => {
                         name={'email'}
                         value={regFormData.email}
                     />
-                     {/* {loginError && <div>{loginError}</div>} */}
                     <input 
                         className="register-input" 
                         type="password" 
                         placeholder="Create a password"
                         onChange={handleChange}
                         name={'password'}
-                          value={regFormData.password}
+                        value={regFormData.password}
                     />
-                     {/* {passwordError && <div>{passwordError}</div>} */}
                     <input 
                         className="register-input" 
                         type="password" 
                         placeholder="Confirm your password" 
                         onChange={handleChange}
                         name={'confirmPassword'}
-                          value={regFormData.confirmPassword}
+                        value={regFormData.confirmPassword}
                     />
-                    {/* {passwordError && <div>{passwordError}</div>} */}
                 </div>
                 <button onClick={handleClick} className="register-btn">{loading ? 'loading....' : 'Registration'}</button>
             </div>
