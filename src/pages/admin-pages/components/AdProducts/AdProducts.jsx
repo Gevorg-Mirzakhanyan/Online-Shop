@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import "./AdProducts.scss"
 import  Modal  from "../../../../components/modal/Modal";
-import { addProduct, deleteProduct, getProduct } from "../../../../platform/api/product-api";
+import { addProduct, deleteProduct, editProduct, getProduct } from "../../../../platform/api/product-api";
 import ListProduct from "./listProduct/ListProduct";
 import AdHeader from "../../../../components/adHeader/AdHeader";
-
 
 const AdProducts = () => {
 
@@ -25,7 +24,7 @@ const AdProducts = () => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
  
-     useEffect(() => {
+    useEffect(() => {
         getProductListData()
     }, [])
     function encodeImageFileAsURL(element) {
@@ -54,12 +53,29 @@ const AdProducts = () => {
         }
     }
 
-    const handleDeleteProduct = async () => {
-        await deleteProduct(myProductList._id);
-        getProductListData();
-
+    const handleEditProduct= async () => {
+        if (formData.name.length) {
+            if (formData) {
+                console.log(myProductList[0]._id);
+                await editProduct(formData, myProductList[0]._id);
+          
+                setIsModal(true )
+                getProductListData();
+            } else {
+                const result = await addProduct(formData);
+                if (result.data) {
+                    getProductListData();
+                    setIsModal(false)
+                }
+            }
+        }
     };
 
+    const handleDeleteProduct = async () => {
+        const id = myProductList[0]._id
+        await deleteProduct(id);
+        getProductListData();
+    };
 
     return (
         <div>
@@ -79,7 +95,6 @@ const AdProducts = () => {
                             <li>Actions</li>
                         </ul>
                     </div>
-
                     {isOpen ?
                         <Modal title={'Add Products'} onClose={() => setIsModal(false)}>
                             <div className="modal-product">
@@ -111,7 +126,7 @@ const AdProducts = () => {
                                             value={formData.category}
                                         />
                                     </label>
-                                   <label>
+                                    <label>
                                         <input 
                                             onChange={handleChange} 
                                             className="product-input" 
@@ -139,14 +154,17 @@ const AdProducts = () => {
                                         />
                                     </label>
                                 </div>
-
                                 <div>
                                     <button className="modal-btn" onClick={addProductClick}>Add</button>
                                     <button className="modal-btn" onClick={() => setIsModal(false)}>Cancel</button>
                                 </div>
                             </div>
                         </Modal> : null}
-                    <ListProduct myProductList={myProductList} onDeletePicture={() => handleDeleteProduct()}  />
+                    <ListProduct 
+                        myProductList={myProductList} 
+                        onDeletePicture={handleDeleteProduct} 
+                        onEditPicture={handleEditProduct}  
+                    />
                 </div>
             </div>
         </div>

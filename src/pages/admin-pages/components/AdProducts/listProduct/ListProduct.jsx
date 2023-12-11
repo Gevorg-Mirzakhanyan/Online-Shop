@@ -3,9 +3,8 @@
 
 import "./ListProduct.scss"
 
-const ListProduct = ({ myProductList, onDeletePicture }) => {
-
-
+const ListProduct = ({ myProductList,onDeletePicture, onEditPicture }) => {
+    
     return (
   
         <div  className="list-product-container G-flex-column">
@@ -23,7 +22,7 @@ const ListProduct = ({ myProductList, onDeletePicture }) => {
                             <div className="list-product-info-name">{product.size}</div>
                             <div className="list-product-info-name">{product.color}</div>
                             <div className="list-product-action G-center">
-                                <button className="list-product-btn">Edit</button>
+                                <button onClick={()=> onEditPicture()} className="list-product-btn">Edit</button>
                                 <button  onClick={()=> onDeletePicture()} className="list-product-btn">Delete</button>
                             </div>
                         </div>

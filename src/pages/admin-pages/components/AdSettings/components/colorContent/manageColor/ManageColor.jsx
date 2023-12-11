@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { addSize, editSize } from "../../../../../../platform/api/size-api";
-import "./ManageDialog.scss"
-const ManageDialog = ({ manageData, updateSizesList, onClose }) => {
+import { addColor, editColor } from "../../../../../../../platform/api/color-api";
+
+const ManageColor = ({ manageData, updateColorList, onClose }) => {
     const [formData, setFormData] = useState({
         name: "",
     })
@@ -19,13 +19,13 @@ const ManageDialog = ({ manageData, updateSizesList, onClose }) => {
     const handleClick = async () => {
         if (formData.name.length) {
             if (manageData) {
-                await editSize(formData, manageData._id);
-                updateSizesList();
+                await editColor(formData, manageData._id);
+                updateColorList();
                 onClose();
             } else {
-                const result = await addSize(formData);
+                const result = await addColor(formData);
                 if (result.data) {
-                    updateSizesList();
+                    updateColorList();
                     onClose();
                 }
             }
@@ -39,8 +39,8 @@ const ManageDialog = ({ manageData, updateSizesList, onClose }) => {
                     <label>
                         <input
                             value={formData.name}
-                            type="text"
-                            placeholder="Create size"
+                            type="color"
+                            placeholder="Create Color"
                             name="name"
                             onChange={handleChange}
                         />
@@ -59,4 +59,4 @@ const ManageDialog = ({ manageData, updateSizesList, onClose }) => {
     )
 }
 
-export default ManageDialog;
+export default ManageColor;
