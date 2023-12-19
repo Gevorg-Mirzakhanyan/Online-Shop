@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const content = 'color'
+const content = 'colorG'
 
 export const getColorList = async () => {
     return await axios.get(`${process.env.REACT_APP_API_URL}/${content}`)

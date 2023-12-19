@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const content = 'size'
+const content = 'sizeG'
 
 export const getSizesList = async () => {
     return await axios.get(`${process.env.REACT_APP_API_URL}/${content}`)

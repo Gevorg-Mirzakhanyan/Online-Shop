@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { addColor, editColor } from "../../../../../../../platform/api/color-api";
 
-const ManageColor = ({ manageData, updateColorList, onClose }) => {
+const ManageColor = ({ manageColorData, updateColorList, onClose }) => {
     const [formData, setFormData] = useState({
         name: "",
     })
 
     useEffect(() => {
-        if (manageData) {
-            setFormData({ ...formData, name: manageData.name })
+        if (manageColorData) {
+            setFormData({ ...formData, name: manageColorData.name })
         }
     }, []);
 
@@ -16,10 +16,10 @@ const ManageColor = ({ manageData, updateColorList, onClose }) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
 
-    const handleClick = async () => {
+    const handleColorEdit = async () => {
         if (formData.name.length) {
-            if (manageData) {
-                await editColor(formData, manageData._id);
+            if (manageColorData) {
+                await editColor(formData, manageColorData._id);
                 updateColorList();
                 onClose();
             } else {
@@ -48,8 +48,8 @@ const ManageColor = ({ manageData, updateColorList, onClose }) => {
                 </div>
             </div>
             <div className="confirm-button">
-                <button className="confirm-btn" onClick={handleClick}>
-                    {manageData ? "Save" : "ADD"}
+                <button className="confirm-btn" onClick={ handleColorEdit }>
+                    {manageColorData ? "Save" : "ADD"}
                 </button>
                 <button className="confirm-btn" onClick={onClose}>
                     Cancel

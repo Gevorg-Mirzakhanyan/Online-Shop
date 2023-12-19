@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./AdCategories.scss"
 import  Modal from "../../../../components/modal/Modal";
-import { addCategory, getCategory } from "../../../../platform/api/category-api";
+import { addCategory, deleteCategory, getCategory } from "../../../../platform/api/category-api";
 import CategoryList from "./list/CategoryList";
 import AdHeader from "../../../../components/adHeader/AdHeader";
 const AdCategories = () => {
@@ -35,6 +35,10 @@ const AdCategories = () => {
         if (result.data) {
             getCategoryListData()
             setIsModal(false)
+            setFormData({ 
+                image: '',
+                name: '', 
+            })
         }
 
     }
@@ -46,11 +50,11 @@ const AdCategories = () => {
         }
     }
     
-    const handleDeletePicture = (index) => {
-        const updatedPictures = [...myCategoryList];
-        updatedPictures.splice(index, 1);
-        setCategoryList(updatedPictures);
-      };
+    const handleDeleteCategory = async (id) => {
+        await deleteCategory(id);
+        getCategoryListData();
+    };
+
 
     return (
         <div>
@@ -65,7 +69,7 @@ const AdCategories = () => {
                             <div className="modal-apload-box G-center G-flex-column">
                                 <label className="apload-label">
                                     {formData.image ? <div className="selected-image" style={{ backgroundImage: `url('${formData.image}')` }}></div> : <p>Upload image</p>}
-                                    <input onChange={encodeImageFileAsURL} className="apload-img" type="file" placeholder="Image Apload" />
+                                    <input onChange={encodeImageFileAsURL}  className="apload-img" type="file" placeholder="Image Apload" />
                                 </label>
                                 <label>
                                     <input className="modal-img-name" onChange={handleChange} placeholder="Create image name..." />
@@ -77,7 +81,7 @@ const AdCategories = () => {
                             </div>
                         </div>
                     </Modal> : null}
-                    <CategoryList myCategoryList={myCategoryList} onDeletePicture={handleDeletePicture} />
+                    <CategoryList myCategoryList={myCategoryList} onDeletePicture={handleDeleteCategory } />
                 </div>
             </div>
         </div>

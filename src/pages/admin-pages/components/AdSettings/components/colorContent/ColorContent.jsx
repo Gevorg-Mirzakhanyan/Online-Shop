@@ -60,7 +60,7 @@ const SizeContent = () => {
                     {colorList.map((item, index) => {
                         return (
                             <div key={index} className="size-item">
-                                <span className="size-name">{item.name}</span>
+                                <span className="size-name" style={{color:item.name}}>{item.name}</span>
                                 <div className="size-action G-flex">
                                     <button className="size-btn" onClick={() => {handleSelectItem(item); setIsOpenModal(true)}}>Edit</button>
                                     <button className="size-btn" onClick={() => {handleSelectItem(item); setIsOpenDeleteModal(true);}}>Delete</button>

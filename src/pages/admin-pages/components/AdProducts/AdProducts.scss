@@ -1,15 +1,17 @@
+@import "src/assets/style/variables.scss";
+
 .admin-product-list {
-            margin: 20px 0 0 0;
-            border-bottom: 2px solid #919db3;
-            border-top: 2px solid #919db3;
-            padding: 20px;
-        }
+    margin: 20px 0 0 0;
+    border-bottom: 2px solid $blue-85;
+    border-top: 2px solid $blue-85;
+    padding: 20px;
+}
 
 
 .modal-product {
     padding: 20px;
     .upload-label {
-        border: 1px solid yellow;
+        border: 1px solid $yellow;
         padding: 5px;
         border-radius: 10px;
         margin-bottom: 20px;
@@ -23,9 +25,14 @@
         .upload-img {
             display: none;
         }
+      
+    }
+    .select-label {
+        margin-bottom: 10px;
+        color: $grey-80;
     }
     .product-input {
-        border: 1px solid yellow;
+        border: 1px solid $yellow;
         padding: 5px;
         border-radius: 10px;
         margin-bottom: 20px;

@@ -5,8 +5,6 @@ import ManageDialog from "../manageDialog/ManageDialog";
 import { DeleteDialog } from "../../../../../../components/delete/deleteDialog.jsx";
 import "./SizeContent.scss"
 
-
-
 const SizeContent = () => {
 
     const [selectedItem, setSelectedItem] = useState(null);

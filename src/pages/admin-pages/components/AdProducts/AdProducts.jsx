@@ -1,50 +1,27 @@
 import { useEffect, useState } from "react";
 import "./AdProducts.scss"
-import  Modal  from "../../../../components/modal/Modal";
-import { addProduct, deleteProduct, editProduct, getProduct } from "../../../../platform/api/product-api";
-import ListProduct from "./listProduct/ListProduct";
+import ListProduct from "./components/listProduct/ListProduct";
 import AdHeader from "../../../../components/adHeader/AdHeader";
+import { deleteProduct, getProduct } from "../../../../platform/api/product-api";
+import Modal from "../../../../components/modal/Modal";
+import ManageProduct from "./components/manageProduct/ManageProduct";
+import { DeleteDialog } from "../../../../components/delete/deleteDialog";
+
 
 const AdProducts = () => {
-
     const [isOpen, setIsModal] = useState(false);
-    const [myProductList, setProductList] = useState([])
-    const [formData, setFormData] = useState({
-        image: '',
-        category: '',
-        name: '',
-        description: '',
-        price: '',
-        count: '',
-        size: '',
-        color: ''
-    })
+    const [product, setProductData] = useState(null);
+    const [myProductList, setProductList] = useState([]);
+    const [isOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
 
-    function handleChange(e) {
-        setFormData({ ...formData, [e.target.name]: e.target.value })
+    const openEditModal = async (product) => {
+        setIsModal(true)
+        setProductData(product)
     }
- 
+
     useEffect(() => {
         getProductListData()
     }, [])
-    function encodeImageFileAsURL(element) {
-        const file = element.target.files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onloadend = function () {
-                setFormData({ ...formData, image: reader.result })
-            }
-            reader.readAsDataURL(file);
-        }
-    }
-
-    const addProductClick = async () => {
-        const result = await addProduct(formData)
-        if (result.data) {
-            getProductListData()
-            setIsModal(false)
-        }
-    }
 
     const getProductListData = async () => {
         const result = await getProduct()
@@ -53,29 +30,22 @@ const AdProducts = () => {
         }
     }
 
-    const handleEditProduct= async () => {
-        if (formData.name.length) {
-            if (formData) {
-                console.log(myProductList[0]._id);
-                await editProduct(formData, myProductList[0]._id);
-          
-                setIsModal(true )
-                getProductListData();
-            } else {
-                const result = await addProduct(formData);
-                if (result.data) {
-                    getProductListData();
-                    setIsModal(false)
-                }
-            }
-        }
+    const openDeleteDialog = (item) => {
+        setProductData(item)
+        setIsOpenDeleteModal(true)
+    }
+    const handleDeleteProduct = async () => {
+        await deleteProduct(product._id);
+        setIsOpenDeleteModal(false)
+        getProductListData();
+        setProductData(null)
+
     };
 
-    const handleDeleteProduct = async () => {
-        const id = myProductList[0]._id
-        await deleteProduct(id);
-        getProductListData();
-    };
+    const closeModal = () => {
+        setIsModal(false)
+        setProductData(null)
+    }
 
     return (
         <div>
@@ -95,78 +65,42 @@ const AdProducts = () => {
                             <li>Actions</li>
                         </ul>
                     </div>
-                    {isOpen ?
-                        <Modal title={'Add Products'} onClose={() => setIsModal(false)}>
-                            <div className="modal-product">
-                                <div>
-                                    <label className="upload-label">
-                                        {formData.image ? <div className="selected-image" style={{ backgroundImage: `url('${formData.image}')` }}></div> : <p>Upload image</p>}
-                                        <input 
-                                            onChange={encodeImageFileAsURL} 
-                                            className="upload-img" 
-                                            type="file" 
-                                            placeholder="Image Apload" 
-                                        />
-                                    </label>
-                                    <label>
-                                        <input 
-                                            onChange={handleChange} 
-                                            className="product-input" 
-                                            placeholder="Create Product Name" 
-                                            name="name"
-                                            value={formData.name}
-                                        />
-                                    </label>
-                                    <label>
-                                        <input 
-                                            onChange={handleChange} 
-                                            className="product-input" 
-                                            placeholder="Select Category" 
-                                            name="category"
-                                            value={formData.category}
-                                        />
-                                    </label>
-                                    <label>
-                                        <input 
-                                            onChange={handleChange} 
-                                            className="product-input" 
-                                            placeholder="Create Product description" 
-                                            name="description"
-                                            value={formData.description}
-                                        />
-                                    </label>
-                                    <label>
-                                        <input 
-                                            onChange={handleChange} 
-                                            className="product-input" 
-                                            placeholder="Create Price" 
-                                            name="price"
-                                            value={formData.price}
-                                        />
-                                    </label>
-                                    <label>
-                                        <input 
-                                            onChange={handleChange} 
-                                            className="product-input" 
-                                            placeholder="Create Count" 
-                                            name="count"
-                                            value={formData.count}
-                                        />
-                                    </label>
-                                </div>
-                                <div>
-                                    <button className="modal-btn" onClick={addProductClick}>Add</button>
-                                    <button className="modal-btn" onClick={() => setIsModal(false)}>Cancel</button>
-                                </div>
-                            </div>
-                        </Modal> : null}
-                    <ListProduct 
-                        myProductList={myProductList} 
-                        onDeletePicture={handleDeleteProduct} 
-                        onEditPicture={handleEditProduct}  
+
+                    <ListProduct
+                        myProductList={myProductList}
+                        onDeletePicture={openDeleteDialog}
+                        onEditProduct={openEditModal}
                     />
                 </div>
             </div>
+            {isOpen ?
+                <Modal onClose={closeModal}>
+                    <ManageProduct
+                        manageData={product}
+                        close={closeModal}
+                        updateList={getProductListData}
+                    />
+                </Modal> : null
+            }
+            {isOpenDeleteModal ? (
+                <Modal
+                    onClose={() => {
+                        setIsOpenDeleteModal(false)
+                        setProductData(null)
+                    }}
+                    title={"Delete Size"}
+                >
+                    <DeleteDialog
+                        onClose={() => {
+                            setIsOpenDeleteModal(false);
+                            setProductData(null);
+                        }}
+                        onDelete={() => handleDeleteProduct()}
+                        title={"Are you sure you want to delete?"}
+                    />
+                </Modal>
+            ) : null}
+
         </div>
     )
 }

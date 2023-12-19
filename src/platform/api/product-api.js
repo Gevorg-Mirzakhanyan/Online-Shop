@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const content = 'product'
+const content = 'productG'
 
 export const getProduct = async ()=> {
     return await axios.get(`${process.env.REACT_APP_API_URL}/${content}`)

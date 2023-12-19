@@ -11,7 +11,7 @@ const CategoryList = ({ myCategoryList, onDeletePicture }) => {
                         </div>
                         <div className="list-btn-box G-center">
                             <button className="list-btn">Edit</button>
-                            <button onClick={() => onDeletePicture(index)} className="list-btn">Delete</button>
+                            <button onClick={() => onDeletePicture(picture._id)} className="list-btn">Delete</button>
                         </div>
                     </div>
                 ))}
