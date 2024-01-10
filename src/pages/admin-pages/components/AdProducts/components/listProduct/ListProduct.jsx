@@ -4,6 +4,8 @@
 import "./ListProduct.scss"
 
 const ListProduct = ({ myProductList,onDeletePicture, onEditProduct }) => {
+
+    console.log(myProductList)
     
     return (
   
@@ -15,12 +17,12 @@ const ListProduct = ({ myProductList,onDeletePicture, onEditProduct }) => {
                                 <img className="list-product-img" src={product.image} alt={`Uploaded ${index + 1}`} />
                                 <span className="list-product-info-name">{product.name}</span>
                             </div>
-                            {/* <div className="list-product-info-name"> {product.category}</div> */}
+                            <div className="list-product-info-name"> {product.category}</div>
                             <div className="list-product-info-name">{product.description}</div>
                             <div className="list-product-info-name">{product.price}</div>
                             <div className="list-product-info-name">{product.count}</div>
-                            {/* <div className="list-product-info-name">{product.size}</div>
-                            <div className="list-product-info-name">{product.color}</div> */}
+                            <div className="list-product-info-name">{product.size.length}</div>
+                            <div className="list-product-info-name">{product.color}</div>
                             <div className="list-product-action G-center">
                                 <button onClick={()=> onEditProduct(product)} className="list-product-btn">Edit</button>
                                 <button  onClick={()=> onDeletePicture(product)} className="list-product-btn">Delete</button>

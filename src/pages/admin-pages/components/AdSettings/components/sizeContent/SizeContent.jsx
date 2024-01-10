@@ -60,7 +60,7 @@ const SizeContent = () => {
                                 <p className="size-name">{item.name}</p>
                                 <div className="size-action G-flex">
                                     <button className="size-btn" onClick={() => {handleSelectItem(item); setIsOpenModal(true)}}>Edit</button>
-                                    <button className="size-btn" onClick={() => {handleSelectItem(item); setIsOpenDeleteModal(true);}}>Delete</button>
+                                    <button className="size-btn" onClick={() => {handleSelectItem(item); setIsOpenDeleteModal(true)}}>Delete</button>
                                 </div>
                             </div>
                         );

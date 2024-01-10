@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { getCategory } from "../../../../../../platform/api/category-api";
 import { getColorList } from "../../../../../../platform/api/color-api";
 import { getSizesList } from "../../../../../../platform/api/size-api";
-import { addProduct, editProduct } from "../../../../../../platform/api/product-api";
+import { addProduct, editProduct, getProduct } from "../../../../../../platform/api/product-api";
 
 
 const ManageProduct = ({ manageData, close, updateList }) => {
@@ -27,6 +26,22 @@ const ManageProduct = ({ manageData, close, updateList }) => {
         setFormData({ ...formData, [e.target.name]: e.target.value })
     }
 
+    useEffect(() => {
+        if (manageData) {
+          setFormData({
+            name: manageData.name,
+            image: manageData.image,
+            description: manageData.description,
+            price: manageData.price,
+            rate: manageData.rate,
+            size: manageData.size,
+            color: manageData.color,
+            categoryId: manageData.categoryId,
+            counter:manageData.counter
+          });
+        }
+      }, [manageData]);
+
 
     useEffect(() => {
         getAllInfoData()
@@ -34,28 +49,16 @@ const ManageProduct = ({ manageData, close, updateList }) => {
     }, []);
 
     const getAllInfoData = async () => {
-        Promise.all([getCategory(), getColorList(), getSizesList()]).then(data => {
-            setCategoryList(data[0].data)
-            setColorList(data[1].data)
-            setSizeList(data[2].data)
-
-            if (manageData) {
-                setFormData({
-                    ...formData,
-                    image: manageData.image,
-                    categoryId: manageData.categoryId,
-                    name: manageData.name,
-                    description: manageData.description,
-                    price: manageData.price,
-                    count: manageData.count,
-                    size: manageData.size,
-                    color: manageData.color,
-                    colorId: manageData.colorId,
-                })
-            }
-
-        })
-    }
+        const result = Promise.all([
+          getProduct(),
+          getColorList(),
+          getSizesList(),
+        ]).then((data) => {
+          setCategoryList(data[0].data);
+          setColorList(data[1].data);
+          setSizeList(data[2].data);
+        });
+      };
 
 
 
@@ -91,6 +94,8 @@ const ManageProduct = ({ manageData, close, updateList }) => {
             }
         }
     };
+
+
 
 
     const selectColor = (e) => {
